@@ -1,0 +1,23 @@
+<?php /* Smarty version 2.6.14, created on 2007-09-16 21:39:27
+         compiled from fastdeploy_setup_1.html */ ?>
+<b>Welcome to the Fastdeploy Installer:</b>
+<table width="100%" border="0" cellpadding="0" class=installerLine>
+  <tr>
+    <td width="90%">This installer will guide you through determining, installing,
+    	and configuring the various prerequisites necessary to properly run and 
+    	use Fastdeploy.  There are a few key applications you 
+    	need to run Fastdeploy: 
+    		<OL> 
+    			<LI> Apache + PHP + PHP MySQL database support.  If you see this obviously the
+    			Apache+PHP script is installed.  You will need the PHP extension necessary to 
+    			support MySQL.</LI> 
+    			<LI> MySQL database RDBMS support. </LI> 
+    			<LI> TFTP server local to the Fastdeploy application.</LI>
+    			<LI> A configurable DHCP server somewhere on the network.  This could be
+    			ISC DHCP, Windows Server DHCP, Lucent QIP, and many others that support the 
+    			necessary network boot options. </LI> 
+    			<LI> A few PHP PEAR libraries like MDB2 and HTML_QuickForm.</LI>
+    		</OL> 
+    </td>
+  </tr>
+</table>

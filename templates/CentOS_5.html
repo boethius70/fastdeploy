@@ -1,0 +1,379 @@
+  {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+       
+  //-->
+  
+  </script>
+  {{/if}}
+  
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+    <div dojoType="SplitContainer"
+		orientation="vertical"
+		sizerWidth="2"
+		activeSizing="0"
+		style="width: 100%; height: 100%; background: #ffffff; padding: 0px;" id='AllContainers'
+	          >
+		<div dojoType="ContentPane" sizeShare="6" style="overflow: auto; background-color: #D6E2F4; border: 1px solid #6290D2;"">
+  			<div class="os_icon">{{$form_data.os_icon.label}} <b> {{$form_data.os_friendly_name.label}}</b></div>
+		</div>
+		<div id="mainTabContainer" dojoType="TabContainer" sizeShare=85 selectedTab="tab1" >
+		    <div id="tab1" dojoType="ContentPane" class="contentFlow" label="General Options" executeScripts="true" >
+		       <table>
+		       	  {{if $form_data.profile_create_name}}
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.profile_create_name.label}}</th>
+		        <td align=left>{{$form_data.profile_create_name.html}}</td>
+		      </tr>	
+		    {{/if}}
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.hostname.label}}</th>
+		        <td align=left>{{$form_data.hostname.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.domain.label}}</th>
+		        <td align=left>{{$form_data.domain.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.mac.label}}</th>
+		        <td align=left>{{$form_data.mac.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.addr_type.label}}</th>
+		        <td align=left>{{$form_data.addr_type.html}}</td>
+		      </tr>
+		 </table>
+		      <div id="staticset" style="display: none;"> 
+		      <table>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.ipaddr.label}}</th>
+		        <td align=left>{{$form_data.ipaddr.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.netmask.label}}</th>
+		        <td align=left>{{$form_data.netmask.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.gateway.label}}</th>
+		        <td align=left>{{$form_data.gateway.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.dns_1.label}}</th>
+		        <td align=left>{{$form_data.dns_1.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.dns_2.label}}</th>
+		        <td align=left>{{$form_data.dns_2.html}}</td>
+		      </tr>
+		      </table>
+		      </div>
+		 <table>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.password.label}}</th>
+		        <td align=left>{{$form_data.password.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.password_confirm.label}}</th>
+		        <td align=left>{{$form_data.password_confirm.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.lang.label}}</th>
+		        <td align=left>{{$form_data.lang.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.tz.label}}</th>
+		        <td align=left>{{$form_data.tz.html}}</td>
+		      </tr>
+		      <tr>
+		        <th valign=bottom align=right class=form_font>{{$form_data.cpu.label}}</th>
+		        <td valign=bottom align=left>{{$form_data.cpu.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.notify.label}}</th>
+		        <td align=left>{{$form_data.notify.html}}</td>
+		      </tr>   
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.redeploy.label}}</th>
+		        <td align=left>{{$form_data.redeploy.html}}</td>
+		      </tr>  
+		    </table>
+		 </div>
+		 <div id="tab2" dojoType="ContentPane" label="HD Partitioning" class="contentFlow" executeScripts="true">
+		    <table>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.hd_part_type.label}}</th>
+		        <td align=left>{{$form_data.hd_part_type.html}}</td>
+		      </tr>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.hd.label}}</th>
+		        <td align=left>{{$form_data.hd.html}}</td>
+		      </tr>
+		     </table>		      
+		       <div id="hd_partitions" style="display: none;">
+		       <table class=hd_form_table>
+		       <tr class=hd_form_table>
+		       	<TD colspan=2><b>&nbsp;</b></td><td><B>RAID0</B></TD><td><B>RAID1</B></TD><td><B>RAID5</B></TD>
+		       	<td><B>VolGrp0</B></TD><td><B>VolGrp1</B></TD></TR>
+		       
+		        <!-- Begin:  HD1 - RAID -->
+		        <tr class=hd_form_table><td colspan=7 valign=top align=left id="hd1_part_root" class=hd_form_table_header><b>Hard Drive 1:</b> </td></tr>
+		        <tr class=hd_form_table>
+		        	<TD><b>/boot</b></td>
+		        	<td align=left>{{$form_data.hd1_part_boot.html}} {{$form_data.hd1_part_boot_size.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_boot_check_raid0.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_boot_check_raid1.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_boot_check_raid5.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_boot_check_vg0.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_boot_check_vg1.html}}</td>
+		        </tr>
+		        <tr class=hd_form_table>
+		        	<TD><b>/</b></td><td align=left>{{$form_data.hd1_part_root.html}} {{$form_data.hd1_part_root_size.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_root_check_raid0.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_root_check_raid1.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_root_check_raid5.html}}</td>
+		          <td align=right>{{$form_data.hd1_part_root_check_vg0.html}}</td>
+		          <td align=right>{{$form_data.hd1_part_root_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/home</b></td><td align=left>{{$form_data.hd1_part_home.html}} {{$form_data.hd1_part_home_size.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_home_check_raid0.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_home_check_raid1.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_home_check_raid5.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_home_check_vg0.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_home_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/usr</b></td><td align=left>{{$form_data.hd1_part_usr.html}} {{$form_data.hd1_part_usr_size.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_usr_check_raid0.html}}</td>
+		        	<td align=right>{{$form_data.hd1_part_usr_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_usr_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_usr_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_usr_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/var</b></td><td align=left>{{$form_data.hd1_part_var.html}} {{$form_data.hd1_part_var_size.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_var_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_var_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_var_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_var_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_var_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>swap</b></td><td colspan=5 align=left>{{$form_data.hd1_part_swap.html}} {{$form_data.hd1_part_swap_size.html}}</td>
+		        </tr>
+		       <tr>
+		        	<td>{{$form_data.hd1_part_custom_mount.html}} </td><td align=left>{{$form_data.hd1_part_custom.html}} {{$form_data.hd1_part_custom_size.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_custom_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_custom_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_custom_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_custom_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd1_part_custom_check_vg1.html}}</td>
+		        </tr>
+		        <!-- End:  HD1 - RAID -->
+		        <!-- Begin:  HD2 - RAID -->
+		        <tr><td colspan=7 valign=top align=left id="hd2_part_root" class=hd_form_table_header><b>Hard Drive 2:</b> </td></tr>
+		        <tr>
+		        	<TD><b>/boot</b></td>
+		        	<td align=left>{{$form_data.hd2_part_boot.html}} {{$form_data.hd2_part_boot_size.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_boot_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_boot_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_boot_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_boot_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_boot_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/</b></td><td align=left>{{$form_data.hd2_part_root.html}} {{$form_data.hd2_part_root_size.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_root_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_root_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_root_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_root_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_root_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/home</b></td><td align=left>{{$form_data.hd2_part_home.html}} {{$form_data.hd2_part_home_size.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_home_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_home_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_home_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_home_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_home_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/usr</b></td><td align=left>{{$form_data.hd2_part_usr.html}} {{$form_data.hd2_part_usr_size.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_usr_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_usr_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_usr_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_usr_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_usr_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/var</b></td><td align=left>{{$form_data.hd2_part_var.html}} {{$form_data.hd2_part_var_size.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_var_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_var_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_var_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_var_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_var_check_vg1.html}}</td>
+		        </tr>
+		         <tr>
+		        	<TD><b>swap</b></td><td colspan=5 align=left>{{$form_data.hd2_part_swap.html}} {{$form_data.hd2_part_swap_size.html}}</td>
+		        </tr>
+		       <tr>
+		        	<td>{{$form_data.hd2_part_custom_mount.html}} </td><td align=left>{{$form_data.hd2_part_custom.html}} {{$form_data.hd2_part_custom_size.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_custom_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_custom_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_custom_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_custom_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd2_part_custom_check_vg1.html}}</td>
+		        </tr>
+		        <!-- End:  HD2 - RAID -->
+		        <!-- Begin:  HD3 - RAID -->
+		        <tr><td colspan=7 valign=top align=left id="hd3_part_root" class=hd_form_table_header><b>Hard Drive 3:</b> </td></tr>
+		        <tr>
+		        	<TD><b>/boot</b></td>
+		        	<td align=left>{{$form_data.hd3_part_boot.html}} {{$form_data.hd3_part_boot_size.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_boot_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_boot_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_boot_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_boot_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_boot_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/</b></td><td align=left>{{$form_data.hd3_part_root.html}} {{$form_data.hd3_part_root_size.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_root_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_root_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_root_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_root_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_root_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/home</b></td><td align=left>{{$form_data.hd3_part_home.html}} {{$form_data.hd3_part_home_size.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_home_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_home_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_home_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_home_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_home_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/usr</b></td><td align=left>{{$form_data.hd3_part_usr.html}} {{$form_data.hd3_part_usr_size.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_usr_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_usr_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_usr_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_usr_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_usr_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/var</b></td><td align=left>{{$form_data.hd3_part_var.html}} {{$form_data.hd3_part_var_size.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_var_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_var_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_var_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_var_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_var_check_vg1.html}}</td>
+		        </tr>
+		         <tr>
+		        	<TD><b>swap</b></td><td colspan=5 align=left>{{$form_data.hd3_part_swap.html}} {{$form_data.hd3_part_swap_size.html}}</td>
+		        </tr>
+		       <tr>
+		        	<td>{{$form_data.hd3_part_custom_mount.html}} </td><td align=left>{{$form_data.hd3_part_custom.html}} {{$form_data.hd3_part_custom_size.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_custom_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_custom_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_custom_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_custom_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd3_part_custom_check_vg1.html}}</td>
+		        </tr>
+		        <!-- End:  HD3 - RAID -->
+		        <!-- Begin:  HD4 - RAID -->
+		        <tr><td colspan=7 valign=top align=left id="hd4_part_root" class=hd_form_table_header><b>Hard Drive 4:</b> </td></tr>
+		        <tr>
+		        	<TD><b>/boot</b></td>
+		        	<td align=left>{{$form_data.hd4_part_boot.html}} {{$form_data.hd4_part_boot_size.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_boot_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_boot_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_boot_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_boot_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_boot_check_vg1.html}}</td>
+		        </tr>
+		         <tr>
+		        	<TD><b>/</b></td><td align=left>{{$form_data.hd4_part_root.html}} {{$form_data.hd4_part_root_size.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_root_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_root_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_root_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_root_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_root_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/home</b></td><td align=left>{{$form_data.hd4_part_home.html}} {{$form_data.hd4_part_home_size.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_home_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_home_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_home_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_home_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_home_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/usr</b></td><td align=left>{{$form_data.hd4_part_usr.html}} {{$form_data.hd4_part_usr_size.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_usr_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_usr_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_usr_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_usr_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_usr_check_vg1.html}}</td>
+		        </tr>
+		        <tr>
+		        	<TD><b>/var</b></td><td align=left>{{$form_data.hd4_part_var.html}} {{$form_data.hd4_part_var_size.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_var_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_var_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_var_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_var_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_var_check_vg1.html}}</td>
+		        </tr>
+		         <tr>
+		        	<TD><b>swap</b></td><td colspan=5 align=left>{{$form_data.hd4_part_swap.html}} {{$form_data.hd4_part_swap_size.html}}</td>
+		        </tr>
+		       <tr>
+		        	<td>{{$form_data.hd4_part_custom_mount.html}} </td><td align=left>{{$form_data.hd4_part_custom.html}} {{$form_data.hd4_part_custom_size.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_custom_check_raid0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_custom_check_raid1.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_custom_check_raid5.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_custom_check_vg0.html}}</td>
+		        	<td align=right >{{$form_data.hd4_part_custom_check_vg1.html}}</td>
+		        </tr>
+		       <!-- End:  HD4 - RAID -->
+		        </table>
+		      </div>
+		</div>
+		<div id="tab3" dojoType="ContentPane" label="Install Tasks">
+		    <table>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.pre_install.label}}</th>
+		        <td align=left>{{$form_data.pre_install.html}}</td>
+		      </tr>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.post_install.label}}</th>
+		        <td align=left>{{$form_data.post_install.html}}</td>
+		      </tr>
+		     </table>
+		</div>
+		<div id="tab4" dojoType="ContentPane" label="Software Selection">
+		    <tble>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.software.label}}</th>
+		        <td align=left>{{$form_data.software.html}}</td>
+		      </tr>
+		     </table>
+		</div>
+  	</div>
+	<div id="submitContainer" dojoType="ContentPane" sizeShare="10"  style="overflow: auto; background-color: #D6E2F4; border: 1px solid #6290D2;">
+		<table width=100%>
+			 {{if $form_data.requirednote and not $form_data.frozen}}
+			    <tr>
+			      <td valign="top" align=right>{{$form_data.requirednote}}</td>
+			    </tr>
+  			{{/if}}
+		      <tr>
+		        <td align=RIGHT><input type=submit value="DONE" class=submit3D></td>
+		      </tr>
+		</table>
+	</div>
+  </div>
+  </form>

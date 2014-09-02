@@ -1,0 +1,1345 @@
+# Check the integrity of another CD-ROM?
+d-i	cdrom-checker/nextcd	boolean	false
+# Internal use
+d-i	debian-installer/consoledisplay	string	kbd=lat0-sun16(iso15)
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-zh_CN	select	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-sv	select	
+# kernel needs a link in /boot/ (linux only)
+d-i	debian-installer/kernel/linux/link_in_boot	boolean	false
+# Internal use
+d-i	debian-installer/fallbacklocale	string	en_US@euro
+# Active devices for the RAID0 multidisk device:
+d-i	mdcfg/raid0devs	multiselect	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-zh_TW	select	
+# Auto-configure network with DHCP?
+d-i	netcfg/use_dhcp	boolean	true
+# Go back to the menu and correct errors?
+d-i	partman-basicfilesystems/check_failed	boolean	
+# Partitioning scheme:
+d-i	partman-auto/choose_recipe	select	All files in one partition (recommended for new users)
+# Logical volume name:
+d-i	lvmcfg/lvcreate_name	string	
+# Write the changes to disk devices and copy the data?
+d-i	partman-partitioning/confirm_copy	boolean	
+# Hostname:
+d-i	netcfg/get_hostname	string	voice
+# 
+d-i	preseed/include_command	string	
+# Is this information correct?
+d-i	netcfg/confirm_static	boolean	true
+# For internal use (Is a serial console in use?)
+d-i	debian-installer/serial-console	boolean	false
+# Keymap to use:
+d-i	console-keymaps-at/keymap	select	us
+# Multidisk device type:
+d-i	mdcfg/createmain	select	
+# 
+d-i	partman/exception_handler	select	
+# Do you want to resume partitioning?
+d-i	partman-target/mount_failed	boolean	
+# expert recipe content
+d-i	partman-auto/expert_recipe	string	
+# How to use this partition:
+d-i	partman-target/choose_method	select	
+# Driver needed by your Ethernet card:
+d-i	ethdetect/module_select	select	no ethernet card
+# Mount options:
+d-i	partman-reiserfs/options	multiselect	
+# Choose an installation step:
+d-i	debian-installer/missing-provide	select	${DEFAULT}
+# Check CD-ROM integrity?
+d-i	cdrom-checker/start	boolean	false
+# New partition size:
+d-i	partman-partitioning/new_partition_size	string	some number
+# Display again already asked questions
+d-i	debconf/showold	boolean	false
+# Type of keyboard:
+d-i	console-tools/archs	select	PC-style (AT or PS-2 connector) keyboard
+# Logical volume:
+d-i	lvmcfg/lvdelete_lvnames	select	
+# Continue with partitioning?
+d-i	partman/unsupported_label	boolean	false
+# New partition size:
+d-i	partman-partitioning/new_size	string	some number
+# Wireless ESSID for :
+d-i	netcfg/wireless_essid	string	
+# Spare devices for the RAID1 multidisk device:
+d-i	mdcfg/raid1sparedevs	multiselect	
+# Keymap to use for a USB keyboard:
+d-i	console-keymaps-usb/keymap	select	mac-usb-us
+# PCMCIA resource range options:
+d-i	hw-detect/pcmcia_resources	string	
+# Skip installing grub?
+d-i	grub-installer/skip	boolean	false
+# Mount options:
+d-i	partman-basicfilesystems/fatoptions	multiselect	
+# Prompt for module parameters?
+d-i	hw-detect/prompt_module_params	boolean	false
+# Internal use
+d-i	debconf/language	string	en_US:en_GB:en
+# Name server addresses:
+d-i	netcfg/get_nameservers	string	
+# dummy template for preseeding unavailable questions
+d-i	debian-installer/dummy	string	
+# Primary network interface:
+d-i	netcfg/choose_interface	select	
+# default kernel image if nothing better is found
+d-i	debian-installer/kernel/image	string	kernel-image-2.4.27-2-386
+# Device to remove from volume group:
+d-i	lvmcfg/vgreduce_parts	select	
+# Devices to add to the volume group:
+d-i	lvmcfg/vgextend_parts	multiselect	
+# Cannot read floppy, or not a driver floppy. Retry?
+d-i	retriever/floppy/error	boolean	true
+# Volume group name:
+d-i	lvmcfg/vgcreate_name	string	
+# Debian version to install:
+d-i	mirror/suite	select	stable
+# kernel needs an initrd (linux 2.6 only)
+d-i	debian-installer/kernel/linux/initrd-2.6	boolean	true
+# How to use this free space:
+d-i	partman/free_space	select	
+# Network configuration method:
+d-i	netcfg/dhcp_options	select	Configure network manually
+# Choose the next step in the install process:
+d-i	debian-installer/main-menu	select	Finish the installation
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-fr	select	
+# file to load for expert recipe
+d-i	partman-auto/expert_recipe_file	string	
+# device to partition, in either devfs or non format
+d-i	partman-auto/disk	string	
+# Retriever to use:
+d-i	anna/retriever	select	cdrom-retriever
+# Mount point for this partition:
+d-i	partman-basicfilesystems/mountpoint_manual	string	
+# Point-to-point address:
+d-i	netcfg/get_pointopoint	string	
+# Keep current partition layout and configure LVM?
+d-i	partman-lvm/confirm_nochanges	boolean	false
+# enable frame buffer console on boot
+d-i	debian-installer/framebuffer	boolean	true
+# Volume group to delete:
+d-i	lvmcfg/vgdelete_names	select	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-nl	select	
+# Location for the new partition:
+d-i	partman-partitioning/new_partition_place	select	
+# 
+d-i	preseed/include	string	
+# Ignore questions with a priority less than...
+d-i	debconf/priority	select	high
+# Load network drivers from a driver floppy?
+d-i	ethdetect/load_floppy	boolean	false
+# Continue the install without loading kernel modules?
+d-i	anna/no_kernel_modules	boolean	false
+# Percentage of the file system blocks reserved for the super-user:
+d-i	partman-basicfilesystems/specify_reserved	string	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-ru	select	
+# kernel commandline
+d-i	debian-installer/kernel/commandline	string	ro
+# Start PC card services?
+d-i	hw-detect/start_pcmcia	boolean	true
+# Multidisk configuration actions
+d-i	mdcfg/mainmenu	select	
+# default kernel image if nothing better is found (2.6)
+d-i	debian-installer/kernel/image-2.6	string	kernel-image-2.6.8-2-386
+# DHCP hostname:
+d-i	netcfg/dhcp_hostname	string	
+# Do you want to return to the partitioning menu?
+d-i	partman-basicfilesystems/no_mount_point	boolean	
+# Typical usage of this partition:
+d-i	partman-basicfilesystems/specify_usage	select	
+# Really delete the volume group?
+d-i	lvmcfg/vgdelete_confirm	boolean	true
+# Type for the new partition:
+d-i	partman-partitioning/new_partition_type	select	
+# This is an overview of your currently configured partitions and mount points. Select a partition to modify its settings (file system, mount point, etc.), a free space to create partitions, or a device to initialise its partition table.
+d-i	partman/choose_partition	select	Finish partitioning and write changes to disk
+# Shell command or commands to run in the d-i environment as early as possible (use with care!)
+d-i	preseed/early_command	string	
+# WEP key for wireless device :
+d-i	netcfg/wireless_wep	string	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-ar	select	
+# always halt the machine
+d-i	debian-installer/exit/always_halt	boolean	false
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-pt_BR	select	
+# Do you want to return to the partitioning menu?
+d-i	partman-xfs/no_mount_point	boolean	
+# Write the changes to disks?
+d-i	partman/confirm	boolean	false
+# Go back to the menu and correct errors?
+d-i	partman-xfs/check_failed	boolean	
+# Multidisk device to be deleted:
+d-i	mdcfg/deletemenu	select	
+# Device for boot loader installation:
+d-i	grub-installer/bootdev	string	
+# IP address:
+d-i	netcfg/get_ipaddress	string	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-es	select	
+# Continue without a default route?
+d-i	netcfg/no_default_route	boolean	
+# GRUB installation failed.  Continue anyway?
+d-i	grub-installer/apt-install-failed	boolean	yes
+# Flags for the new partition:
+d-i	partman-partitioning/set_flags	multiselect	
+# Internal use
+d-i	languagechooser/locale	string	en
+# Continue with the installation?
+d-i	partman/confirm_nochanges	boolean	false
+# Write the changes to the storage devices and configure RAID?
+d-i	partman-md/confirm	boolean	false
+# Choose a language:
+d-i	languagechooser/language-name	select	English
+# Use unrecommended JFS /boot file system?
+d-i	partman-jfs/jfs_boot	boolean	false
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-en	select	
+# Proceed with installation to unclean target?
+d-i	base-installer/use_unclean_target	boolean	false
+# sub architecture
+d-i	debian-installer/kernel/subarchitecture	string	generic
+# Go back to the menu?
+d-i	partman-basicmethods/method_only	boolean	
+# Try again to mount the CD-ROM?
+d-i	cdrom-detect/retry	boolean	true
+# Write the changes to disk and resize the partition?
+d-i	partman-partitioning/confirm_resize	boolean	
+# Partition settings:
+d-i	partman/active_partition	select	
+# Domain name:
+d-i	netcfg/get_domain	string	westmarc.net
+# Module needed for accessing the CD-ROM:
+d-i	cdrom-detect/cdrom_module	select	none
+# Volume group:
+d-i	lvmcfg/lvdelete_vgnames	select	
+# path to debconf preseed file (or files) to load
+d-i	preseed/file	string	
+# LVM configuration action:
+d-i	lvmcfg/mainmenu	select	
+# Install the GRUB boot loader to the master boot record?
+d-i	grub-installer/with_other_os	boolean	true
+# Mount options:
+d-i	partman-basicfilesystems/options	multiselect	
+# Choose a country, territory or area:
+d-i	countrychooser/country-name	select	United States
+# Create new empty partition table on this device?
+d-i	partman/confirm_new_label	boolean	false
+# Install the GRUB bootloader to XFS filesystem?
+d-i	grub-installer/install_to_xfs	boolean	false
+# Volume group to reduce:
+d-i	lvmcfg/vgreduce_names	select	
+# Installer components to load:
+d-i	anna/choose_modules_lowmem	multiselect	
+# Internal use
+d-i	debian-installer/language	string	en_US:en_GB:en
+# Go back to the menu and correct errors?
+d-i	partman-basicfilesystems/swap_check_failed	boolean	
+# Label for the file system in this partition:
+d-i	partman-basicfilesystems/choose_label	string	
+# Go back to the menu and correct errors?
+d-i	partman-reiserfs/check_failed	boolean	
+# Failed to copy file from CDROM. Retry?
+d-i	retriever/cdrom/error	boolean	true
+# Do you want to return to the partitioning menu?
+d-i	partman-reiserfs/no_mount_point	boolean	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-de	select	
+# Do you want to return to the partitioning menu?
+d-i	partman-jfs/no_mount_point	boolean	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-it	select	
+# Internal use
+d-i	debian-installer/country	string	US
+# Kernel to install:
+d-i	base-installer/kernel/which-kernel	select	kernel-image-2.4.27-2-386
+# Spare devices for the RAID5 multidisk device:
+d-i	mdcfg/raid5sparedevs	multiselect	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-pt	select	
+# What to do with this device:
+d-i	partman/storage_device	select	
+# Activate existing volume groups?
+d-i	lvmcfg/activevg	boolean	true
+# Number of spare devices for the RAID5 array:
+d-i	mdcfg/raid5sparecount	string	
+# Partitioning method:
+d-i	partman-auto/init_automatically_partition	select	Erase entire disk: IDE1 master (hda) - 80.0 GB MDT MD800BB-00CAA1
+# Write the changes to disks and configure LVM?
+d-i	partman-lvm/confirm	boolean	false
+# Device file for accessing the CD-ROM:
+d-i	cdrom-detect/cdrom_device	string	/dev/cdroms/cdrom0
+# kernel needs an initrd (linux only)
+d-i	debian-installer/kernel/linux/initrd	boolean	true
+# Devices for the new volume group:
+d-i	lvmcfg/vgcreate_parts	multiselect	
+# internal use only
+d-i	netcfg/disable_dhcp	boolean	false
+# Number of active devices for the RAID1 array:
+d-i	mdcfg/raid1devcount	string	
+# Active devices for the RAID1 multidisk device:
+d-i	mdcfg/raid1devs	multiselect	
+# Volume group:
+d-i	lvmcfg/lvcreate_vgnames	select	
+# probe for usb devices?
+d-i	debian-installer/probe/usb	boolean	true
+# Logical volume size:
+d-i	lvmcfg/lvcreate_size	string	
+# Are you sure you want to exit now?
+d-i	di-utils-reboot/really_reboot	boolean	false
+# Frontend to use
+d-i	debconf/frontend	string	newt
+# Load CD-ROM drivers from a driver floppy?
+d-i	cdrom-detect/load_floppy	boolean	true
+# Use unrecommended JFS root file system?
+d-i	partman-jfs/jfs_root	boolean	false
+# halt the machine
+d-i	debian-installer/exit/halt	boolean	false
+# Partition table type:
+d-i	partman-partitioning/choose_label	select	
+# Additional parameters for module :
+d-i	ethdetect/retry_params	string	
+# Would you like to make this partition active?
+d-i	lilo-installer/activate-part	boolean	true
+# LILO installation target:
+d-i	lilo-installer/bootdev	select	
+# Go back to the menu and correct errors?
+d-i	partman-jfs/check_failed	boolean	
+# Source partition:
+d-i	partman-partitioning/source_partition	select	
+# Do you want to return to the partitioning menu?
+d-i	partman-ext3/no_mount_point	boolean	
+# Really delete this multidisk device?
+d-i	mdcfg/deleteverify	boolean	false
+# File system for this partition:
+d-i	partman-target/choose_filesystem	select	
+# Mount point for this partition:
+d-i	partman-basicfilesystems/mountpoint	select	
+# Installer components to load:
+d-i	anna/choose_modules	multiselect	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist-eu	select	
+# Mount point for this partition:
+d-i	partman-basicfilesystems/fat_mountpoint	select	
+# Choose a country, territory or area:
+d-i	countrychooser/shortlist	select	US
+# Active devices for the RAID5 multidisk device:
+d-i	mdcfg/raid5devs	multiselect	
+# Manually select a CD-ROM module and device?
+d-i	cdrom-detect/manual_config	boolean	true
+# Mount options:
+d-i	partman-ext3/options	multiselect	
+# LILO installation target:
+d-i	lilo-installer/manual_bootdev	string	
+# Write a new empty partition table?
+d-i	partman/confirm_write_new_label	boolean	false
+# For internal use (keyboard chosen by user)
+d-i	debian-installer/keymap	select	us
+# Go back to the menu and correct errors?
+d-i	partman-ext3/check_failed	boolean	
+# url of debconf preseed file (or files) to download
+d-i	preseed/url	string	
+# Additional parameters for module :
+d-i	hw-detect/module_params	string	
+# Volume groups configuration action:
+d-i	lvmcfg/vgmenu	select	
+# Shell command or commands to run in the d-i environment as late as possible (use with care!)
+d-i	preseed/late_command	string	
+# Number of active devices for the RAID5 array:
+d-i	mdcfg/raid5devcount	string	
+# Disk space to partition:
+d-i	partman-auto/automatically_partition	select	
+# Modules to load:
+d-i	hw-detect/select_modules	multiselect	
+# Mount options:
+d-i	partman-xfs/options	multiselect	
+# Volume group to extend:
+d-i	lvmcfg/vgextend_names	select	
+# Logical volumes configuration action:
+d-i	lvmcfg/lvmenu	select	
+# Continue with partitioning?
+d-i	partman/unknown_label	boolean	true
+# Keep current partition layout and configure RAID?
+d-i	partman-md/confirm_nochanges	boolean	false
+# Select your floppy device:
+d-i	retriever/floppy/device	select	
+# Install the GRUB boot loader to the master boot record?
+d-i	grub-installer/only_debian	boolean	true
+# Partition name:
+d-i	partman-partitioning/set_name	string	
+# File system for the new partition:
+d-i	partman-partitioning/new_partition_fs	select	
+# Internal use
+d-i	debian-installer/locale	string	en_US
+# Mount options:
+d-i	partman-jfs/options	multiselect	
+# Gateway:
+d-i	netcfg/get_gateway	string	
+# Number of spare devices for the RAID1 array:
+d-i	mdcfg/raid1sparecount	string	
+# LILO installation failed.  Continue anyway?
+d-i	lilo-installer/apt-install-failed	boolean	yes
+# Netmask:
+d-i	netcfg/get_netmask	string	255.255.255.0
+# Wireless network kind:
+d-i	netcfg/wireless_adhoc_managed	select	Infrastructure (Managed) network
+# Root login password
+libpam-ldap	libpam-ldap/rootbindpw	password	
+# Root password:
+passwd	passwd/root-password	password	
+# Encrypted admin password:
+slapd	slapd/internal/adminpw	password	M4vG6g0Ow0d7g
+# Admin password:
+slapd	slapd/password1	password	slaphappy
+# What password should MythTV use to access its database?
+mythtv-common	mythtv/mysql_mythtv_password	password	kGrV2fPG
+# What is the password for the MySQL administrator account 'root'?
+mythtv-database	mythtv/mysql_admin_password	password	
+# Enter a password for the new user:
+passwd	passwd/user-password	password	
+# Password for the login account.
+libpam-ldap	libpam-ldap/bindpw	password	
+# Confirm password:
+slapd	slapd/password2	password	slaphappy
+# password for database login account
+libnss-ldap	libnss-ldap/bindpw	password	
+# Re-enter password to verify:
+passwd	passwd/root-password-again	password	
+# Re-enter password to verify:
+passwd	passwd/user-password-again	password	
+# Are you in the  time zone?
+base-config	tzconfig/choose_country_zone_single	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/german/standard/keymap	select	
+# database requires login
+libnss-ldap	libnss-ldap/dblogin	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/swedish/variant	select	
+# Should MySQL start on boot?
+mysql-server-4.1	mysql-server-4.1/start_on_boot	boolean	true
+# Do you want to enable mail scanning?
+clamav-base	clamav-base/ScanMail	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/serbian/standard/keymap	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/serbian/variant	select	
+# Select a city or time zone:
+base-config	tzconfig/select_zone	select	
+# Fix LDAP directory on upgrade?
+slapd	slapd/fix_directory	boolean	true
+# What is the keys layout of your keyboard ?
+console-data	console-data/keymap/azerty/layout	select	
+# Is this information correct?
+base-config	tzconfig/verify_choices	boolean	true
+# Organisational Unit Name
+ssl-cert	make-ssl-cert/ouname	string	IT
+# Host Name
+ssl-cert	make-ssl-cert/hostname	string	beta.serverminds.com
+# Name of your organization:
+slapd	shared/organization	string	westmarc
+# Virus database update method:
+clamav-freshclam	clamav-freshclam/autoupdate_freshclam	select	daemon
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/finnish/variant	select	
+# On what network interfaces should the DHCP server listen?
+dhcp3-server	dhcp3-server/interfaces	string	eth0
+# Please choose your approximate monitor size.
+xserver-xfree86	xserver-xfree86/config/monitor/screen-size	select	17 inches (430 mm)
+# Please choose your sound daemon's dsp wrapper.
+mozilla-browser	mozilla/dsp	select	none
+# Should tcpd setup paranoid hosts.allow and hosts.access?
+tcpd	tcpd/paranoid-mode	boolean	false
+# Do you want to ignore PCI display devices?
+hotplug	hotplug/ignore_pci_class_display	boolean	true
+# Should MySQL be added to /etc/php4/cli/php.ini?
+php4-mysql	php4/extension_mysql_cli	boolean	true
+# Use kernel framebuffer device interface?
+xserver-xfree86	xserver-xfree86/config/device/use_fbdev	boolean	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/portugese/standard/keymap	select	
+# Groups for clamav-daemon (space-seperated):
+clamav-base	clamav-base/AddGroups	string	amavis
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/estonian/variant	select	
+# Should mandb build its database now?
+man-db	man-db/build-database	boolean	true
+# The distinguished name of the search base.
+libnss-ldap	shared/ldapns/base-dn	string	dc=westmarc,dc=net
+libpam-ldap	shared/ldapns/base-dn	string	dc=westmarc,dc=net
+# Machine handling outgoing mail for this host (smarthost):
+exim4-config	exim4/dc_smarthost	string	
+# Enter a username for your account:
+passwd	passwd/username	string	jantonio
+# How many previous history files should be kept? (global)
+cvs	cvs/rotatekeep	string	7
+# Please choose a method for selecting your monitor characteristics.
+xserver-xfree86	xserver-xfree86/config/monitor/selection-method	select	Advanced
+# Domains to relay mail for:
+exim4-config	exim4/dc_relay_domains	string	
+# Mail name?
+postfix	postfix/mailname	string	mail1.westmarc.net
+# Do you want the daemon to follow directory symlinks?
+clamav-base	clamav-base/FollowDirectorySymlinks	boolean	false
+# Move /etc/samba/smbpasswd to /var/lib/samba/passdb.tdb?
+samba	samba/tdbsam	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/slovak/variant	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/canadian/french/keymap	select	
+# Should MySQL be added to /etc/php4/apache2/php.ini?
+php4-mysql	php4/extension_mysql_apache2	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/hungarian/variant	select	
+# Do you want xfstt to listen on a TCP port?
+xfstt	xfstt/listen_tcp	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/macedonian/variant	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/german/variant	select	
+# Do you want to handle the configuration file with debconf?
+clamav-base	clamav-base/debconf	boolean	true
+# Add another apt source?
+base-config	apt-setup/another	boolean	false
+# Do you wish to fix invalid repositories?
+cvs	cvs/badrepositories	select	create
+# Should GD be added to /etc/php4/cli/php.ini?
+php4-gd	php4/extension_gd_cli	boolean	true
+# Should CURL be added to /etc/php4/cli/php.ini?
+php4-curl	php4/extension_curl_cli	boolean	true
+# Please enter the video card's bus identifier.
+xserver-xfree86	xserver-xfree86/config/device/bus_id	string	
+# Should LDAP be added to /etc/php4/apache/php.ini?
+php4-ldap	php4/extension_ldap_apache	boolean	true
+# Which locale should be the default in the system environment?
+locales	locales/default_environment_locale	select	en_US
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/belgian/apple_usb/keymap	select	
+# Should LDAP be added to /etc/php4/cgi/php.ini?
+php4-ldap	php4/extension_ldap_cgi	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/slovene/standard/keymap	select	
+# Remove undelivered mails in spool directory?
+exim4-base	exim4/purge_spool	boolean	false
+# What DHCP servers should the DHCP relay forward requests to?
+dhcp3-relay	dhcp3-relay/servers	string	216.151.149.106
+# IP address clamd will listen on:
+clamav-base	clamav-base/TCPAddr	string	any
+# Should IMAP be added to /etc/php4/cgi/php.ini?
+php4-imap	php4/extension_imap_cgi	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/french/with_euro__latin_9_/keymap	select	
+# Use password encryption?
+samba-common	samba-common/encrypt_passwords	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/slovak/variant	select	
+# command to run after base system configuration
+base-config	base-config/late_command	string	
+# Update /etc/network/interfaces?
+ifupdown	ifupdown/convert-interfaces	boolean	true
+# Enable automatic Language/Region selection?
+mozilla-browser	mozilla/locale_auto	boolean	true
+# Do you want to start the graphical display manager?
+base-config	base-config/start-display-manager	boolean	true
+# Enter the amount of memory (in kB) to be used by your video card.
+xserver-xfree86	xserver-xfree86/config/device/video_ram	string	
+# Enable md5 passwords?
+passwd	passwd/md5	boolean	false
+# Which network interfaces do you want to be managed by hotplug?
+hotplug	hotplug/net_agent_policy	select	hotplug
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/spanish/apple_usb/keymap	select	
+# Is your monitor an LCD device?
+xserver-xfree86	xserver-xfree86/config/monitor/lcd	boolean	false
+# SMTP relay host? (blank for none)
+postfix	postfix/relayhost	string	
+# Should GD be added to /etc/php4/apache/php.ini?
+php4-gd	php4/extension_gd_apache	boolean	true
+# Do you want to configure libnet-perl with debconf?
+libnet-perl	libnet-perl/config_with_debconf	boolean	false
+# Timeout for stopping the thread-scanner (seconds):
+clamav-base	clamav-base/ReadTimeout	string	180
+# Mirror directory:
+base-config	apt-setup/directory	string	/debian/
+# Are you ready for the ADB keycodes transition?
+console-common	console-data/keymap/powerpcadb	select	
+console-data	console-data/keymap/powerpcadb	select	
+# Use procmail for local delivery?
+postfix	postfix/procmail	boolean	false
+# Do you really want to downgrade?
+mysql-server	mysql-server/really_downgrade_from_41	boolean	false
+# Should CURL be added to /etc/php4/apache/php.ini?
+php4-curl	php4/extension_curl_apache	boolean	true
+# internal use only
+xserver-xfree86	xserver-xfree86/config/inputdevice/keyboard/internal	string	
+# Do you want to recreate device files needed by cdrecord?
+cdrecord	cdrecord/MAKEDEVNEW	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/czech/standard/keymap	select	
+# Your default SMTP hosts.
+libnet-perl	libnet-perl/smtp_hosts	string	mailhost
+# Socket type:
+clamav-base	clamav-base/TcpOrLocal	select	UNIX
+# Which variant do you have ?
+console-data	console-data/keymap/fggiod/turkish/variant	select	
+# Database backend to use:
+slapd	slapd/backend	select	BDB
+# Make local root Database admin.
+libpam-ldap	libpam-ldap/dbrootlogin	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/romanian/variant	select	
+# Do you want the daemon to follow regular file symlinks?
+clamav-base	clamav-base/FollowFileSymlinks	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/bulgarian/variant	select	
+# Should MHASH be added to /etc/php4/cli/php.ini?
+php4-mhash	php4/extension_mhash_cli	boolean	true
+# Character Set for DOS clients
+samba-common	samba-common/codepage	string	
+# Disable chargen, echo, daytime/udp, time/udp services?
+netkit-inetd	netkit-inetd/inetd-dos-services	boolean	true
+# Your default POP3 hosts.
+libnet-perl	libnet-perl/pop3_hosts	string	pop
+# Configure Exim4 manually?
+exim4-config	exim4/exim3_upgrade	boolean	true
+# Scan another CD?
+base-config	apt-setup/cd/another	boolean	false
+# What would you like to do about ?
+ucf	ucf/changeprompt_threeway	select	keep your currently-installed version
+# Which USB modules do you want to be preloaded?
+hotplug	hotplug/static_module_list	multiselect	
+# Local database mirror site:
+clamav-freshclam	clamav-freshclam/local_mirror	select	db.us.clamav.net (United States)
+# What do you want to do?
+base-config	apt-setup/badedit	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/belgian/wang/keymap	select	
+# Debian distribution to use:
+base-config	mirror/suite	select	stable
+d-i	mirror/suite	select	stable
+unknown	mirror/suite	select	stable
+# Would you like to start openvpn sooner?
+openvpn	openvpn/change_init	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/finnish/standard/keymap	select	
+# Allow LDAPv2 protocol?
+slapd	slapd/allow_ldap_v2	boolean	false
+# Which television standard should be used by MythTV?
+mythtv-common	mythtv/tv_format	select	NTSC
+# Bad entry, try again?
+postfix	postfix/rfc1035_violation	boolean	false
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/bulgarian/cp_1251_coding/keymap	select	
+# Select the desired X server driver.
+xserver-xfree86	xserver-xfree86/config/device/driver	select	vesa
+# Enter your monitor's vertical refresh range.
+xserver-xfree86	xserver-xfree86/config/monitor/vert-refresh	string	43-75
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/lithuanian/variant	select	
+# Please select your desired default color depth in bits.
+xserver-xfree86	xserver-xfree86/config/display/default_depth	select	24
+# What is the name of the MySQL administrator account?
+mythtv-database	mythtv/mysql_admin_user	string	root
+# Generate new configuration file
+ssh	ssh/new_config	boolean	true
+# General type of mail configuration:
+exim4-config	exim4/dc_eximconfig_configtype	select	local delivery only; not on a network
+# What is the keys layout of your keyboard ?
+console-data	console-data/keymap/fggiod/layout	select	
+# Do you want to continue (and risk killing active ssh sessions)?
+ssh	ssh/use_old_init_script	boolean	true
+# Comment out extension_dir config from /etc/php4/cgi/php.ini?
+php4-cgi	php4/update_cgi_php_ini	boolean	true
+# On what network interfaces should the DHCP server listen?
+dhcp3-relay	dhcp3-relay/interfaces	string	eth0
+# Mirror hostname:
+base-config	apt-setup/hostname	string	mirrors.kernel.org
+# Your default daytime hosts.
+libnet-perl	libnet-perl/daytime_hosts	string	
+# Local networks?
+postfix	postfix/mynetworks	string	127.0.0.0/8
+# Number of threads for the daemon:
+clamav-base	clamav-base/MaxThreads	string	12
+# Maximum directory depth that will be allowed:
+clamav-base	clamav-base/MaxDirectoryRecursion	string	0
+# Is the hardware clock set to GMT?
+base-config	tzconfig/gmt	boolean	true
+# Should MySQL start on boot?
+mysql-server	mysql-server/start_on_boot	boolean	true
+# Character Set for Unix filesystem
+samba-common	samba-common/character_set	string	
+# There may be errors on the upgrade.
+spamassassin	spamassassin/upgrade/cancel	select	Continue
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/us_american/standard/keymap	select	
+# Should LDAP be added to /etc/php4/cli/php.ini?
+php4-ldap	php4/extension_ldap_cli	boolean	true
+# Enable shadow passwords?
+passwd	passwd/shadow	boolean	true
+# Remove the databases from all MySQL versions?
+mysql-server-4.1	mysql-server-4.1/postrm_remove_databases	boolean	false
+# Additional options for the Daemon?
+dhcp3-relay	dhcp3-relay/options	string	
+# Make debconf change your config?
+libpam-ldap	libpam-ldap/override	boolean	true
+# Select the video modes you would like the X server to use.
+xserver-xfree86	xserver-xfree86/config/display/modes	multiselect	1024x768, 800x600, 640x480
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/hungarian/variant	select	
+# HTTP proxy information (blank for none):
+base-config	mirror/http/proxy	string	
+unknown	mirror/http/proxy	string	
+# Use contrib software?
+base-config	apt-setup/contrib	boolean	false
+# What is your internet domain name?
+libnet-perl	libnet-perl/inet_domain	string	localdomain
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/czech/variant	select	
+# Which services should be restarted to make them use the new libraries?
+libssl0.9.7	libssl0.9.7/restart-services	string	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/hungarian/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/ukrainian/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/polish/standard/keymap	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/canadian/variant	select	
+# Omit OpenLDAP server configuration?
+slapd	slapd/no_configuration	boolean	false
+# Should PAM be added to /etc/php4/cgi/php.ini?
+php4-auth-pam	php4/extension_pam_auth_cgi	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/dvorak/unknown/apple_usb/keymap	select	
+# See only questions that are of what priority and higher?
+d-i	debconf/priority	select	medium
+debconf	debconf/priority	select	medium
+unknown	debconf/priority	select	medium
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/spanish/variant	select	
+# Which keymap do you want ?
+console-common	console-data/keymap/full	select	
+# Should  be added to /etc/php4//php.ini?
+php4-auth-pam	php4/add_extension	boolean	true
+php4-curl	php4/add_extension	boolean	true
+php4-gd	php4/add_extension	boolean	true
+php4-imap	php4/add_extension	boolean	true
+php4-ldap	php4/add_extension	boolean	true
+php4-mhash	php4/add_extension	boolean	true
+php4-mysql	php4/add_extension	boolean	true
+php4-recode	php4/add_extension	boolean	true
+# command to run early in base system configuration
+base-config	base-config/early_command	string	
+# Area for your time zone:
+base-config	tzconfig/geographic_area	select	
+# Move old database?
+slapd	slapd/move_old_database	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/brazilian/variant	select	
+# Store mixer settings before shutdown?
+alsa-base	alsa-base/alsactl_store_on_shutdown	select	never autosave
+# Select the XFree86 server modules that should be loaded by default.
+xserver-xfree86	xserver-xfree86/config/modules	multiselect	GLcore, bitmap, dbe, ddc, dri, extmod, freetype, glx, int10, record, speedo, type1, vbe
+# Should all FTP connections with Net::FTP outside your network be passive mode?
+libnet-perl	libnet-perl/ftp_ext_passive	boolean	false
+# CD-ROM device file:
+base-config	apt-setup/cd/dev	string	/dev/cdrom
+# Organisation Name
+ssl-cert	make-ssl-cert/organisationname	string	Serverminds.com
+# unprivileged database user
+libnss-ldap	libnss-ldap/binddn	string	cn=proxyuser,dc=example,dc=net
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/danish/standard/keymap	select	
+# Remove the databases from all MySQL versions?
+mysql-server	mysql-server/postrm_remove_databases	boolean	false
+# Mirror country:
+base-config	apt-setup/country	select	United States
+# Select how many previous history files should be kept?
+cvs	cvs/rotatekeep_nondefault	select	no
+# Visible domain name for local users:
+exim4-config	exim4/dc_readhost	string	
+# Should PAM be removed from /etc/php4/cli/php.ini?
+php4-auth-pam	php4/remove_extension	boolean	true
+php4-curl	php4/remove_extension	boolean	true
+php4-gd	php4/remove_extension	boolean	true
+php4-imap	php4/remove_extension	boolean	true
+php4-ldap	php4/remove_extension	boolean	true
+php4-mhash	php4/remove_extension	boolean	true
+php4-mysql	php4/remove_extension	boolean	true
+php4-recode	php4/remove_extension	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/byelorussian/standard/keymap	select	
+# What is the keys layout of your keyboard ?
+console-data	console-data/keymap/qwertz/layout	select	
+# Maximum stream length (unit Mb) allowed:
+clamav-base	clamav-base/StreamMaxLength	string	0
+# Move aside current database and create a new one?
+slapd	slapd/suffix_change	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/dutch/variant	select	
+# Create samba password database, /var/lib/samba/passdb.tdb?
+samba	samba/generate_smbpasswd	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/japanese/variant	select	
+# Archive access method for apt:
+base-config	apt-setup/uri_type	select	http
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/portugese/variant	select	
+# Do you want me to restart apache-ssl now?
+apache-common	apache-shared/restart	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/russian/variant	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/serbian/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/dutch/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/japanese/pc_110/keymap	select	
+# Enter a full name for the new user:
+passwd	passwd/user-fullname	string	Jim 
+# Do you really want to downgrade?
+mysql-server-4.1	mysql-server-4.1/really_downgrade	boolean	false
+# Set the FQDN for apache-ssl default server
+apache-ssl	apache-ssl/server-name	string	localhost
+# Do you want /usr/lib/ssh-keysign to be installed SUID root?
+ssh	ssh/SUID_client	boolean	true
+# Rotate the history files of the repository in ?
+cvs	cvs/rotate_individual	boolean	true
+# Directory to dump databases:
+slapd	slapd/dump_database_destdir	string	/var/backups/slapd-VERSION
+# Enable suExec?
+apache	apache/enable-suexec	boolean	false
+# Install dash as /bin/sh?
+dash	dash/sh	boolean	false
+# Which specific keymap do you want ?
+console-common	console-data/keymap/template/keymap	select	
+console-data	console-data/keymap/template/keymap	select	
+# State or Province Name
+ssl-cert	make-ssl-cert/statename	string	California
+# Delete config files in /etc/spamassassin?
+spamassassin	spamassassin/upgrade/2.42m	select	No
+# Change configuration to load backend modules?
+slapd	slapd/autoconf_modules	boolean	true
+# Disable challenge-response authentication?
+ssh	ssh/disable_cr_auth	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/azerty/belgian/variant	select	
+# Attempt to autodetect video hardware?
+xserver-xfree86	xserver-xfree86/autodetect_video_card	boolean	false
+# DNS domain name:
+slapd	slapd/domain	string	westmarc.net
+# Do you want to entrust font management to defoma?
+libpango1.0-common	libpango1.0-common/use_defoma	boolean	true
+# What sort of FTP proxy firewall do you have?
+libnet-perl	libnet-perl/ftp_firewall_type	select	
+# Please select your keyboard variant.
+xserver-xfree86	xserver-xfree86/config/inputdevice/keyboard/variant	string	
+# Would you like to stop openvpn before it gets upgraded?
+openvpn	openvpn/stop2upgrade	boolean	false
+# What policy do you want to apply regarding keymaps ?
+console-common	console-data/keymap/policy	select	Don't touch keymap
+console-data	console-data/keymap/policy	select	Don't touch keymap
+# What user do you want to run clamav-daemon as:
+clamav-base	clamav-base/User	string	clamav
+# TCP port clamd will listen on:
+clamav-base	clamav-base/TCPSocket	string	3310
+# Should IMAP be added to /etc/php4/apache/php.ini?
+php4-imap	php4/extension_imap_apache	boolean	true
+# Configure smb.conf through debconf?
+samba-common	samba-common/do_debconf	boolean	true
+# Delete out of date config files in /etc/spamassassin?
+spamassassin	spamassassin/upgrade/2.42u	select	No
+# Enable the Apache 2 mod_python module?
+libapache2-mod-python2.3	libapache2-mod-python/enable_module	boolean	true
+# Should MHASH be added to /etc/php4/apache2/php.ini?
+php4-mhash	php4/extension_mhash_apache2	boolean	true
+# Limit for the maximum number of files in an archive:
+clamav-base	clamav-base/ArchiveMaxFiles	string	1000
+# Please choose your mouse port.
+xserver-xfree86	xserver-xfree86/config/inputdevice/mouse/port	select	/dev/psaux
+# for internal use
+console-common	console-data/bootmap-md5sum	string	none
+console-data	console-data/bootmap-md5sum	string	none
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/greek/standard/keymap	select	
+# Write default Files section to configuration file?
+xserver-xfree86	xserver-xfree86/config/write_files_section	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/slovak/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/swedish/standard/keymap	select	
+# Attempt monitor autodetection?
+xserver-xfree86	xserver-xfree86/autodetect_monitor	boolean	false
+# Enter the desired nice value for the X server to use.
+xserver-common	xserver-common/xwrapper/nice_value	string	-10
+# Name of the network interface connected to the Internet:
+clamav-freshclam	clamav-freshclam/internet_interface	string	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/french/pc_keyboard__non-us_102_keys_/keymap	select	
+# Should recode be added to /etc/php4/apache/php.ini?
+php4-recode	php4/extension_recode_apache	boolean	true
+# Do you want system wide readable home directories?
+adduser	adduser/homedir-permission	boolean	true
+# What would you like to do about php.ini?
+ucf	ucf/changeprompt	select	keep your currently-installed version
+# Enter an identifier for your video card.
+xserver-xfree86	xserver-xfree86/config/device/identifier	string	Generic Video Card
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/swiss/german/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/german/apple_usb/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/estonian/standard/keymap	select	
+# Correct master.cf for upgrade?
+postfix	postfix/master_upgrade_warning	boolean	
+# What is the keys layout of your keyboard ?
+console-common	console-data/keymap/template/layout	select	
+console-data	console-data/keymap/template/layout	select	
+# What is the keys layout of your keyboard ?
+console-data	console-data/keymap/qwerty/layout	select	
+# Should MySQL be added to /etc/php4/apache/php.ini?
+php4-mysql	php4/extension_mysql_apache	boolean	true
+# Is it OK to create the video4linux device nodes?
+mythtv-backend	mythtv/create_v4l_devs	boolean	true
+# Invalid configuration. Retry configuration?
+slapd	slapd/invalid_config	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/lithuanian/standard/keymap	select	
+# Which variant do you have ?
+console-data	console-data/keymap/azerty/french/variant	select	
+# Select your time zone:
+base-config	tzconfig/choose_country_zone/BR	select	East
+# Do you want to use the system logger?
+clamav-base	clamav-base/LogSyslog	boolean	false
+# Overwrite existing /etc/aliases?
+exim4-config	exim4/dc_noalias_regenerate	boolean	false
+# Do you want the repository  exported via pserver?
+cvs	cvs/pserver_repos_individual	boolean	true
+# Enable subpixel rendering of text?
+fontconfig	fontconfig/subpixel_rendering	select	Automatic
+# enable automatic configuration updates by debconf
+libnss-ldap	libnss-ldap/override	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/czech/variant	select	
+# Should Postfix upgrade hash and btree maps?
+postfix	postfix/db_upgrade_warning	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/fggiod/turkish/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/russian/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/swedish/apple_usb/keymap	select	
+# Should IMAP be added to /etc/php4/cli/php.ini?
+php4-imap	php4/extension_imap_cli	boolean	true
+# Change the maximum pserver processes spawned in one minute?
+cvs	cvs/pserver_setspawnlimit	boolean	false
+# What is the layout family of your keyboard ?
+console-common	console-data/keymap/family	select	qwerty
+console-data	console-data/keymap/family	select	qwerty
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/brazilian/br-latin1/keymap	select	
+# How do you want to run Samba?
+samba	samba/run_mode	select	daemons
+# Should all FTP connections with Net::FTP regardless of destination be passive mode?
+libnet-perl	libnet-perl/ftp_int_passive	boolean	false
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/swiss/french/keymap	select	
+# What is the keys layout of your keyboard ?
+console-data	console-data/keymap/dvorak/layout	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/romanian/standard/keymap	select	
+# Continue installing libc-client without Maildir support?
+libc-client2002edebian	libc-client/no_maildir_warning	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/finnish/apple_usb/keymap	select	
+# Gracefully handle left-over Unix socket files?
+clamav-base	clamav-base/FixStaleSocket	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/swiss/variant	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/norwegian/variant	select	
+# Select the desired default X server.
+xserver-xfree86	shared/default-x-server	select	xserver-xfree86
+# Emulate 3 button mouse?
+xserver-xfree86	xserver-xfree86/config/inputdevice/mouse/emulate3buttons	boolean	true
+# Set the FQDN for apache default server
+apache	apache/server-name	string	localhost
+# Use security updates from security.debian.org?
+base-config	apt-setup/security-updates	boolean	true
+# Enable bitmapped fonts by default?
+fontconfig	fontconfig/enable_bitmaps	boolean	false
+# Correct dynamicmaps.cf for upgrade?
+postfix	postfix/dynamicmaps_upgrade_warning	boolean	
+# Local address extension character?
+postfix	postfix/recipient_delim	string	+
+# Should mandb build its database now?
+man-db	man-db/rebuild-database	boolean	true
+# General type of configuration?
+postfix	postfix/main_mailer_type	select	Internet Site
+# Proxy user information (leave blank for none):
+clamav-freshclam	clamav-freshclam/proxy_user	string	
+# Manage CD-ROM devices and mount points with discover?
+discover1	discover/manage_cdrom_devices	boolean	false
+# Your default time hosts.
+libnet-perl	libnet-perl/time_hosts	string	
+# Locality Name
+ssl-cert	make-ssl-cert/localityname	string	Winters
+# Do you want the cdrecord binaries to be installed SUID root?
+cdrecord	cdrecord/SUID_bit	boolean	false
+# Please select your keyboard layout.
+xserver-xfree86	xserver-xfree86/config/inputdevice/keyboard/layout	string	us
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/brazilian/standard/keymap	select	
+# Machines to relay mail for:
+exim4-config	exim4/dc_relay_nets	string	
+# Enter your monitor's horizontal sync range.
+xserver-xfree86	xserver-xfree86/config/monitor/horiz-sync	string	28-50
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/british/variant	select	
+# System mail name:
+exim4-config	exim4/mailname	string	localhost.localdomain
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/ukrainian/variant	select	
+# How many history files should be kept in ?
+cvs	cvs/rotatekeep_individual	string	7
+# LDAP Server host.
+libnss-ldap	shared/ldapns/ldap-server	string	127.0.0.1
+libpam-ldap	shared/ldapns/ldap-server	string	127.0.0.1
+# Enter an identifier for your monitor.
+xserver-xfree86	xserver-xfree86/config/monitor/identifier	string	Generic Monitor
+# Local crypt to use when changing passwords.
+libpam-ldap	libpam-ldap/pam_password	select	crypt
+# Should GD be added to /etc/php4/cgi/php.ini?
+php4-gd	php4/extension_gd_cgi	boolean	true
+# Attempt mouse device autodetection?
+xserver-xfree86	xserver-xfree86/autodetect_mouse	boolean	true
+# Create a normal user account now?
+passwd	passwd/make-user	boolean	true
+# Modify smb.conf to use WINS settings from DHCP?
+samba-common	samba-common/dhcp	boolean	false
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/icelandic/standard/keymap	select	
+# Which XMLTV grabber should be used to retrieve program listings?
+mythtv-common	mythtv/grabber	select	tv_grab_na
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/british/apple_usb/keymap	select	
+# dummy item
+base-config	debian-installer/language	string	en_US:en_GB:en
+d-i	debian-installer/language	string	en_US:en_GB:en
+unknown	debian-installer/language	string	en_US:en_GB:en
+# Unprivileged database user.
+libpam-ldap	libpam-ldap/binddn	string	cn=proxyuser,dc=example,dc=net
+# Set the email address of the apache-ssl administrator
+apache-ssl	apache-ssl/server-admin	string	webmaster@localhost
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/bulgarian/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/czech/standard/keymap	select	
+# Delay in seconds between daemon self checks:
+clamav-base	clamav-base/SelfCheck	string	3600
+# Your default PH hosts.
+libnet-perl	libnet-perl/ph_hosts	string	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/latvian/standard/keymap	select	
+# Your local netmask.
+libnet-perl	libnet-perl/local_netmask	string	
+# Choose the Debian mirror to use:
+base-config	apt-setup/mirror	select	mirrors.kernel.org
+# make configuration readable/writeable by owner only
+libnss-ldap	libnss-ldap/confperm	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/latin_american/variant	select	
+# Workgroup/Domain Name?
+samba-common	samba-common/workgroup	string	westmarc
+# Select locales to be generated.
+locales	locales/locales_to_be_generated	multiselect	en_US ISO-8859-1
+# Please select your monitor's best video mode.
+xserver-xfree86	xserver-xfree86/config/monitor/mode-list	select	1280x960 @ 60Hz
+# Should man and mandb be installed 'setuid man'?
+man-db	man-db/install-setuid	boolean	false
+# Do you want all your repositories exported via pserver?
+cvs	cvs/pserver_repos	select	all
+# Should the CVS pserver be enabled?
+cvs	cvs/pserver	boolean	false
+# Directory for CD-ROM device mount points:
+discover1	discover/cdrom_base_mountpoint	string	/media/
+# Do you want to enable RAR archive scanning?
+clamav-base	clamav-base/ScanRAR	boolean	false
+# Do you want to enable archive scanning?
+clamav-base	clamav-base/ScanArchive	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/dvorak/unknown/right_single-handed/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/us_american/apple_usb/keymap	select	
+# dummy item
+base-config	debian-installer/country	string	US
+d-i	debian-installer/country	string	US
+unknown	debian-installer/country	string	US
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/serbian/variant	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/belgian/standard/keymap	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/croat/variant	select	
+# Do you want to change your current time zone?
+base-config	tzconfig/change_timezone	boolean	false
+# IP-addresses to listen on for incoming SMTP connections:
+exim4-config	exim4/dc_local_interfaces	string	127.0.0.1
+# Set the directory that will contain the web pages for apache default server
+apache	apache/document-root	string	/var/www
+# Comment out extension_dir config from /etc/php4/apache/php.ini?
+libapache-mod-php4	php4/update_apache_php_ini	boolean	true
+# Root login account
+libpam-ldap	libpam-ldap/rootbinddn	string	cn=admin,dc=westmarc,dc=net
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/canadian/english/keymap	select	
+# Which variant do you have ?
+console-common	console-data/keymap/template/variant	select	
+console-data	console-data/keymap/template/variant	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/greek/variant	select	
+# Should clamd be notified after updates?
+clamav-freshclam	clamav-freshclam/NotifyClamd	boolean	true
+# Migrate XKB configuration directory?
+libx11-6	libx11-6/migrate_xkb_dir	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/dvorak/unknown/standard/keymap	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/polish/variant	select	
+# Please select the XKB rule set to use.
+xserver-xfree86	xserver-xfree86/config/inputdevice/keyboard/rules	string	xfree86
+# Keep number of DNS-queries minimal (Dial-on-Demand)?
+exim4-config	exim4/dc_minimaldns	boolean	false
+# Which specific keymap do you want ?
+console-data	console-data/keymap/dvorak/unknown/left_single-handed/keymap	select	
+# Use non-free software?
+base-config	apt-setup/non-free	boolean	false
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/turkish/variant	select	
+# Dump databases to file on upgrade:
+slapd	slapd/dump_database	select	when needed
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/icelandic/variant	select	
+# md5sum of the config file /etc/libnet-perl
+libnet-perl	libnet-perl/cfg_md5sum	string	92332e4758b7f0fb9ae13ab677cdbaad
+# Force synchronous updates on mail queue?
+postfix	postfix/chattr	boolean	false
+# Please select your keyboard model.
+xserver-xfree86	xserver-xfree86/config/inputdevice/keyboard/model	string	pc104
+# Write default DRI section to configuration file?
+xserver-xfree86	xserver-xfree86/config/write_dri_section	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/danish/variant	select	
+# Where should mail for root go
+postfix	postfix/root_address	string	NONE
+# Should CURL be added to /etc/php4/apache2/php.ini?
+php4-curl	php4/extension_curl_apache2	boolean	true
+# Should LDAP be added to /etc/php4/apache2/php.ini?
+php4-ldap	php4/extension_ldap_apache2	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/latvian/variant	select	
+# Which variant do you have ?
+console-data	console-data/keymap/dvorak/unknown/variant	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/hebrew/variant	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/hebrew/standard/keymap	select	
+# What interface should be used for configuring packages?
+debconf	debconf/frontend	select	Dialog
+# Choose software to install:
+tasksel	tasksel/first	multiselect	manual package selection
+# Other destinations for which mail is accepted:
+exim4-config	exim4/dc_other_hostnames	string	localhost.localdomain
+# Enable scroll events from mouse wheel?
+xserver-xfree86	xserver-xfree86/config/inputdevice/mouse/zaxismapping	boolean	true
+# HTTP proxy information (leave blank for none):
+clamav-freshclam	clamav-freshclam/http_proxy	string	
+# Number of pending connections allowed:
+clamav-base	clamav-base/MaxConnectionQueueLength	string	15
+# Do you want to generate warning e-mails on outdated data files?
+clamav-data	clamav-data/warn-on-old-databases	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/hungarian/standard/keymap	select	
+# Limit on the Archive recursion:
+clamav-base	clamav-base/ArchiveMaxRecursion	string	5
+# Largest file size in Mb you will scan inside archives:
+clamav-base	clamav-base/ArchiveMaxFileSize	string	10
+# Do you use USB mouse with X11?
+hotplug	hotplug/x11_usbmice_hack	boolean	false
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/norwegian/standard/keymap	select	
+# Allow SSH protocol 2 only
+ssh	ssh/protocol2_only	boolean	true
+# Enable suExec?
+apache-ssl	apache-ssl/enable-suexec	boolean	false
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/slovak/standard/keymap	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/british/standard/keymap	select	
+# Country Name
+ssl-cert	make-ssl-cert/countryname	string	US
+# Really leave the mail system unconfigured?
+exim4-config	exim4/no_config	boolean	true
+# Should MHASH be added to /etc/php4/apache/php.ini?
+php4-mhash	php4/extension_mhash_apache	boolean	true
+# What is the name of your FTP proxy firewall (if you have one)?
+libnet-perl	libnet-perl/ftp_firewall	string	
+# Hide local mail name in outgoing mail?
+exim4-config	exim4/hide_mailname	boolean	
+# Should CURL be added to /etc/php4/cgi/php.ini?
+php4-curl	php4/extension_curl_cgi	boolean	true
+# Choose software to install:
+tasksel	tasksel/tasks	multiselect	
+# Do you want to log time information with each message?
+clamav-base	clamav-base/LogTime	boolean	true
+# Log file for clamav-daemon (enter none to disable):
+clamav-base	clamav-base/LogFile	string	/var/log/clamav/clamav.log
+# Root and postmaster mail recipient:
+exim4-config	exim4/dc_postmaster	string	postmaster
+# How should fonts be tuned for the screen?
+fontconfig	fontconfig/hinting_type	select	Native
+# Please select the modules that apache-ssl will load
+apache-common	apache-shared/debconf-modules	multiselect	mod_log_config_ssl, mod_mime_magic, mod_mime_ssl, mod_negotiation, mod_status, mod_autoindex, mod_dir, mod_cgi, mod_userdir, mod_alias, mod_rewrite, mod_access, mod_auth_ssl, mod_expires, mod_setenvif, apache-ssl
+# LDAP version to use.
+libnss-ldap	shared/ldapns/ldap_version	select	3
+libpam-ldap	shared/ldapns/ldap_version	select	3
+# Choose the next step in the install process:
+base-config	base-config/main-menu	select	Finish configuring the base system
+# Should PAM be added to /etc/php4/cli/php.ini?
+php4-auth-pam	php4/extension_pam_auth_cli	boolean	true
+# Database requires logging in.
+libpam-ldap	libpam-ldap/dblogin	boolean	false
+# Should MySQL be added to /etc/php4/cgi/php.ini?
+php4-mysql	php4/extension_mysql_cgi	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/italian/variant	select	
+# Where are your repositories?
+cvs	cvs/repositories	string	/var/lib/cvs
+# Change backend type from LDBM to BDB?
+slapd	slapd/migrate_ldbm_to_bdb	boolean	true
+# Should recode be added to /etc/php4/cgi/php.ini?
+php4-recode	php4/extension_recode_cgi	boolean	true
+# On what host does the MySQL server reside?
+mythtv-common	mythtv/mysql_host	string	localhost
+# Number of freshclam updates per day:
+clamav-freshclam	clamav-freshclam/update_interval	string	24
+# Other destinations to accept mail for? (blank for none)
+postfix	postfix/destinations	string	mail1.westmarc.net, localhost.localdomain, localhost.localdomain, localhost,westmarc.net
+# Please select your keyboard options.
+xserver-xfree86	xserver-xfree86/config/inputdevice/keyboard/options	string	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/turkish/standard/keymap	select	
+# Do you want to run the sshd server?
+ssh	ssh/run_sshd	boolean	true
+# Correct master.cf for upgrade?
+postfix	postfix/nqmgr_upgrade_warning	boolean	
+# You may lose currently running screen sessions. Continue the install?
+screen	screen/old_upgrade_prompt	boolean	false
+# Local (Unix) socket clamd will listen on:
+clamav-base	clamav-base/LocalSocket	string	/var/run/clamav/clamd.ctl
+# dummy item
+base-config	debian-installer/keymap	string	us
+d-i	debian-installer/keymap	string	us
+unknown	debian-installer/keymap	string	us
+# Set the TCP port on which the apache server will listen
+apache	apache/server-port	string	80
+# Limit on Archive compression:
+clamav-base	clamav-base/ArchiveMaxCompressionRatio	string	250
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/macedonian/standard/keymap	select	
+# Use a PPP connection to install the system?
+base-config	base-config/use-ppp	boolean	false
+# Please choose the entry that best describes your mouse.
+xserver-xfree86	xserver-xfree86/config/inputdevice/mouse/protocol	select	PS/2
+# Select your time zone:
+base-config	tzconfig/choose_country_zone/US	select	Pacific
+# Split configuration into small files?
+exim4-config	exim4/use_split_config	boolean	false
+# System hostname:
+base-config	base-config/get-hostname	string	voice
+# Should recode be added to /etc/php4/apache2/php.ini?
+php4-recode	php4/extension_recode_apache2	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/spanish/standard/keymap	select	
+# internal use only
+exim4-config	exim4/internal/exim4-config.reconfigure	boolean	false
+# Select your time zone:
+base-config	tzconfig/choose_country_zone_multiple	select	
+# Would you like to start apache-ssl at boot time?
+apache-ssl	apache-ssl/init	boolean	true
+# Should IMAP be added to /etc/php4/apache2/php.ini?
+php4-imap	php4/extension_imap_apache2	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/finnish/old__obsolete_/keymap	select	
+# Select what type of user has permission to start the X server.
+xserver-common	xserver-common/xwrapper/allowed_users	select	Console Users Only
+# Select your time zone:
+base-config	tzconfig/choose_country_zone/CA	select	Eastern
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwertz/croat/standard/keymap	select	
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/byelorussian/variant	select	
+# Should GD be added to /etc/php4/apache2/php.ini?
+php4-gd	php4/extension_gd_apache2	boolean	true
+# Email Address
+ssl-cert	make-ssl-cert/email	string	webmaster@beta.serverminds.com
+# Move yet undelivered mails from exim(v3) to exim4 spool?
+exim4-base	exim4/move_exim3_spool	boolean	false
+# Would you like a TUN/TAP device to be created?
+openvpn	openvpn/create_tun	boolean	false
+# Mailbox size limit
+postfix	postfix/mailbox_limit	string	0
+# Your default SNPP hosts.
+libnet-perl	libnet-perl/snpp_hosts	string	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/japanese/standard/keymap	select	
+# Should MHASH be added to /etc/php4/cgi/php.ini?
+php4-mhash	php4/extension_mhash_cgi	boolean	true
+# Would you like to start apache at boot time?
+apache	apache/init	boolean	true
+# What should be the inetd spawn limit for CVS pserver?
+cvs	cvs/pserver_spawnlimit	string	400
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/latin_american/standard/keymap	select	
+# Should PAM be added to /etc/php4/apache/php.ini?
+php4-auth-pam	php4/extension_pam_auth_apache	boolean	true
+# internal use only
+xserver-common	xserver-common/xwrapper/actual_allowed_users	string	console
+# Do you want the history files in your repositories rotated weekly?
+cvs	cvs/rotatehistory	select	no
+# Which variant do you have ?
+console-data	console-data/keymap/qwerty/us_american/variant	select	
+# Do you want your database to be removed when slapd is purged?
+slapd	slapd/purge_database	boolean	false
+# Set the email address of the apache administrator
+apache	apache/server-admin	string	webmaster@localhost
+# Should recode be added to /etc/php4/cli/php.ini?
+php4-recode	php4/extension_recode_cli	boolean	true
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/french/apple_usb/keymap	select	
+# What username should MythTV use to access its database?
+mythtv-common	mythtv/mysql_mythtv_user	string	mythtv
+# Should the server be started by inetd?
+tftpd-hpa	tftpd-hpa/use_inetd	boolean	true
+# Which variant do you have ?
+console-data	console-data/keymap/qwertz/slovene/variant	select	
+# Which specific keymap do you want ?
+console-data	console-data/keymap/qwerty/italian/standard/keymap	select	
+# Set the directory that will contain the web pages for apache-ssl default server
+apache-ssl	apache-ssl/document-root	string	/var/www
+# Which channel frequency table should be used by MythTV?
+mythtv-common	mythtv/freqtable	select	us-cable
+# What database should be used to hold MythTV data?
+mythtv-common	mythtv/mysql_mythtv_dbname	string	mythconverg
+# Your default NNTP hosts.
+libnet-perl	libnet-perl/nntp_hosts	string	news
+# Which specific keymap do you want ?
+console-data	console-data/keymap/azerty/french/same_as_x11__latin_1_/keymap	select	
+# Migrate Xt application defaults directory?
+libxt6	libxt6/migrate_app_defaults_dir	boolean	true

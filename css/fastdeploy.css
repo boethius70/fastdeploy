@@ -1,0 +1,394 @@
+/***********************************************/
+/* HTML tag styles                             */
+/***********************************************/	
+html, body
+{
+	/* font-family: Trebuchet MS, Helvetica, Verdana, Arial, sans-serif; */
+	font-family: tahoma, verdana, arial, sans-serif;
+	font-size: 10pt;
+	color: #000;
+	width: 100%;	/* make the body expand to fill the visible window */
+	height: 100%;
+	overflow: auto;	/* erase window level scrollbars  */
+	/* line-height: 1.166;	*/
+	margin: 0px;
+	padding: 0px;
+	background-color: #ffffff;
+}
+
+/* dojo-specific */
+
+.contentFlow {
+	overflow: scroll;
+}
+
+.dojoSplitPane{
+		margin: 5px;
+	}
+#rightPane {
+		margin: 0;
+}
+
+/******* hyperlink and anchor tag styles *******/
+
+a:link, a:visited{
+	text-decoration: none;
+	color : #000000;
+}
+
+a:hover{
+	text-decoration: underline;
+/}
+
+hr {width: 85%;
+    text-align: left;/*this will align it for IE*/
+    margin: 0 auto 0 0; /*this will align it left for Mozilla*/
+    bgcolor : #ccccff
+}
+
+table.data_set { 
+font-family: 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+ font-size : 10pt; 
+ background: #FFF; 
+ border-collapse: collapse;
+  margin: 0px; padding: 0px; 
+  }
+table.data_set th { padding-left: 5px; padding-right: 5px; background-color: #ccccff; border-bottom: 2px solid black; }
+table.data_set td { margin: 1px; padding: 1px; border-bottom: 1px solid #333; }
+table.data_set tr:hover td, table.data_set tr:hover td a { color: #fff; background-color: #d0e3f5; }
+table.data_set tr td a { color: #900; }
+table.data_set td { border-right: 1px dashed #CCC; }
+
+/**** 3D button style ****/
+
+input.submit3D
+{
+	border: 3px double #999999;
+	border-top-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	padding: 0.25em;
+	background-color: #FFFFFF;
+	background-image: url(images/background_form_element.gif)
+	background-repeat: repeat-x;
+	color: #333333;
+	font-size: 75%;
+	font-weight: bold;
+	font-family: tahoma, verdana, arial, sans-serif }
+} 
+
+ .clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+a.button {
+    background: transparent url('../images/bg_button_a.gif') no-repeat scroll top right;
+    color: #444;
+    display: block;
+    float: left;
+    font: normal 12px arial, sans-serif;
+    height: 24px;
+    margin-right: 6px;
+    padding-right: 18px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.button span {
+    background: transparent url('../images/bg_button_div.gif') no-repeat;
+    display: block;
+    line-height: 14px;
+    padding: 5px 0 5px 18px;
+}
+
+a.button:active {
+    background-position: bottom right;
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:active span {
+    background-position: bottom left;
+    padding: 6px 0 4px 18px; /* push text down 1px */
+} 
+
+
+/* styles used by dojo */
+.formQuestion {
+	background-color:#d0e3f5;
+	padding:0.3em;
+	font-weight:900;
+	font-family: tahoma, verdana, arial, sans-serif }
+	font-size:0.4em;
+	color:#5a5a5a;
+}
+.formAnswer {
+	background-color:#f5eede;
+	padding:0.3em;
+	margin-bottom:1em;
+	width: 100%;
+}
+.pageSubContentTitle {
+		color:#8e8e8e;
+		font-size:0.6em;
+		font-family: "lucida grande", tahoma, verdana, arial, sans-serif }
+		margin-bottom:0.75em;
+}
+.small {
+	width: 2.5em;
+}
+.medium {
+	width: 10em;
+}
+.long {
+	width: 20em;
+}
+
+span.invalid, span.missing {
+	display: inline;
+	margin-left: 1em;
+	font-weight: bold;
+	font-style: italic;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif }
+	color: #f66;
+	font-size: 0.4em;
+}
+
+.noticeMessage {
+	display: block;
+	float: right;
+	font-weight: normal;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif }
+	color:#663;
+	font-size:0.6em;
+}
+/* group multiple buttons in a row */
+div .dojoButton {
+	float: left;
+	margin-left: 10px;
+}
+
+/* form CSS */
+.fQuestion { /* for standard form fields */
+	/* background-color:#cccc99; */
+	/* font-weight:100; */
+	font-family: tahoma, verdana, arial, sans-serif;
+	font-size:10pt;
+	color:#000000;
+}
+
+.form_font { 
+	font-family: tahoma, verdana, arial, sans-serif; 
+	font-size:10pt;
+	color:#000; 
+	/* width is set to have a fixed width for flippable static IP layer display */
+	width: 250px;
+}
+
+.form_font_only { 
+	font-family: tahoma, verdana, arial, sans-serif; 
+	font-size:10pt;
+	color:#000; 
+}
+.hd_form_table_header { 
+          background-color: #99ccff; 
+	font-family: tahoma, verdana, arial, sans-serif; 
+	font-size:10pt;
+	color:#000; 
+	
+}
+
+.hd_form_table { 
+          background-color: #6699ff; 
+	font-family: tahoma, verdana, arial, sans-serif; 
+	font-size:10pt;
+	color:#000; 
+	border : solid black 1px; 
+}
+
+.hd_form_cols { 
+          background-color: #6699ff; 
+	font-family: tahoma, verdana, arial, sans-serif; 
+	font-size:10pt;
+	color:#000; 
+	border-right: solid black 1px; 
+}
+
+.formContent {
+	background-color:#99CCFF;
+}
+
+/* for creating gradients */
+
+<style type="text/css">.grad img {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+.box {
+  border: solid orange 2px;
+  float: left;
+  margin: 1px;
+  position: relative;
+  width: 165px;
+  padding: 5px;
+}
+.box * {
+  margin: 0px;
+  position: relative;
+  z-index: 1;
+}
+* html .grad {
+  filter: progid:DXImageTransform.Microsoft.AlphaImage » Loader (src='images/grad_white.png', sizingMethod='scale');
+}
+* html .grad img {
+  display: none;
+}
+* html .box {
+    position:static;
+}
+.blue { 
+  background-color: #2382a1; 
+}
+.green { 
+  background-color: #4be22d; 
+}
+.pink { 
+  background-color: #ff009d;
+}
+
+.yesbox {
+ background-color: #cccccc;
+ border: solid black 2px; 
+ margin : 2px; 
+ color: black;
+ font-family: 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+ font-size : 10pt; 
+}
+
+.nobox {
+ background-color: #999999;
+ font-weight: bold;
+ border: solid black 2px; 
+ margin : 2px; 
+ color: red;
+}
+
+/* begin overriding Dojo's Wizard CSS */
+
+.WizardContainer {
+        background: #EEEEEE;
+        border: #798EC5 1px solid;
+        padding: 2px;
+}
+
+.WizardTitle {
+        color: #003366;
+        padding: 8px 5px 15px 2px;
+        font-weight: bold;
+        font-size: x-small;
+        font-style: normal;
+        font-family: Verdana, Arial, Helvetica;
+        text-align: left;
+}
+
+.WizardText {
+        color: #000033;
+        font-weight: normal;
+        font-size: 12pt;
+        font-family: Verdana, Arial, Helvetica;
+        padding: 2 50; text-align: justify;
+}
+
+.WizardLightText {
+        color: #666666;
+        font-weight: normal;
+        font-size: xx-small;
+        font-family: verdana, arial, helvetica;
+        padding: 2px 50px;
+        text-align: justify;
+}
+
+.WizardButtonHolder {
+        text-align: right;
+        padding: 10px 5px;
+}
+
+.WizardButton {
+        color: #ffffff;
+        background: #ccccff;
+        font-size: 12pt;
+        font-family: verdana, arial, helvetica, sans-serif;
+        border-right: #000000 1px solid;
+        border-bottom: #000000 1px solid;
+        border-left: #666666 1px solid;
+        border-top: #666666 1px solid;
+        padding-right: 4px;
+        padding-left: 4px;
+}
+
+/* End overriding Dojo Wizard styles
+
+/* button classes */
+
+input.btn{
+   color:#000;
+   font-family:verdana, arial, helvetica, sans-serif;
+   font-size:10pt;
+   font-weight:bold;
+   background-color:#CDDFFF;
+   border:1px solid;
+   border-top-color:#0094FF;
+   border-left-color:#0094FF;
+   border-right-color:#0094FF;
+   border-bottom-color:#0094FF;
+   filter:progid:DXImageTransform.Microsoft.Gradient
+      (GradientType=0,StartColorStr='#0094FF',EndColorStr='#ffffffff');}
+      
+/* nice boxes */
+
+#bluebox {
+padding: 5px;
+width: 500px; 
+text-decoration: none;
+top: 20px; 
+left: 30px;
+position : relative; 
+color: black;
+border: 1px solid black;
+background-color: #2175bc;
+}
+
+#bluebox p{
+width: 285px;
+clear: left;
+margin: 0;
+padding: 5px 0 8px 0;
+font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+padding-left: 155px; /*width of left column containing the label elements*/
+border-top: 1px dashed gray;
+height: 1%;
+}
+
+#bluebox label{
+font-weight: bold;
+float: left;
+font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+margin-left: -155px; /*width of left column*/
+width: 200px; /*width of labels. Should be smaller than left column (155px) to create some right margin*/
+}
+
+/* os "sign" position on tabbed page - absolute? */
+.os_icon { 
+	position: absolute; 
+	left: 400px; 
+	top: 8px;
+}
+
+/* layer visibility options */
+
+.nothere {
+	visibility: hidden;
+}

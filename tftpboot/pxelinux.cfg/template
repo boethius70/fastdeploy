@@ -1,0 +1,13 @@
+display installer/i386/boot-screens/f1.txt
+timeout 50
+prompt 1
+ipappend 2
+default template_name
+
+F1 installer/i386/boot-screens/f1.txt
+F2 installer/i386/boot-screens/f2.txt
+F3 installer/i386/boot-screens/f3.txt
+
+label local
+        localboot 0
+

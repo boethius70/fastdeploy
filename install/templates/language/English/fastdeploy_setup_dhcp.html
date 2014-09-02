@@ -1,0 +1,33 @@
+<TABLE>
+<TR><TD COLSPAN=2 ALIGN=MIDDLE><FONT COLOR=white><B>{{$error}}</b></td></tr>
+<TR><TD COLSPAN=2 ALIGN=MIDDLE>&nbsp; <B>Fastdeploy : DHCP Server Setup</B><BR><BR></TD></TR>
+<TR><TD ALIGN=RIGHT WIDTH=400><img src="../images/installer/help_icon.gif" onClick="toggleBox('fdDHCP');">&nbsp; <B>Do you want this server to act as a DHCP server?</B> </TD>
+    <TD ALIGN=LEFT> <INPUT TYPE=RADIO name=dhcpd_toggle value="1"> Yes  <INPUT TYPE=radio name=dhcpd_toggle value="0"> No</td></tr>
+<TR><TD COLSPAN=2><B><div id="fdDHCP" CLASS="longDescription">Choose whether or not you want this Fastdeploy to act as a DHCP server for this network.  DHCP 
+(Dynamic Host Configuration Protocol) is widely used to automatically assign a network configuration to PC workstations and laptops via wired and wireless connections.
+<b>Please note:  Enabling a DHCP server in a local area network (LAN) could affect many machines and take them out of an existing working network
+configuration.  Be careful what piece of the network you are working on when you enable a DHCP server.</B> 
+	</div></TD></TR>
+</TD></TR>
+</TABLE>
+<TABLE>
+<TR><TD ALIGN=LEFT WIDTH=400><img src="../images/installer/help_icon.gif" onClick="toggleBox('fdDHCPIPRange');">&nbsp; <B>DHCP IP Address Range:</B> </TD></TR>
+<TR><TD VALIGN=BOTTOM ALIGN=RIGHT> Start of range:<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3 name=dhcp_range_start_octet1 value="{{$dhcp_range_start_octet1}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_start_octet2 value="{{$dhcp_range_start_octet2}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_start_octet3 value="{{$dhcp_range_start_octet3}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_start_octet4 value="{{$dhcp_range_start_octet4}}"> End of range: <INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_end_octet1 value="{{$dhcp_range_end_octet1}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_end_octet2 value="{{$dhcp_range_end_octet2}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_end_octet3 value="{{$dhcp_range_end_octet3}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_range_end_octet4 value="{{$dhcp_range_end_octet4}}"></td></tr>
+<TR><TD><B><div id="fdDHCPIPRange" CLASS="longDescription">Enter the IP address range you want to utilize; if, for example, you have a network 10.47.100.0 allocated for DHCP
+	and all IP addresses above .100 available for the purposes of using DHCP please you could set an IP address range starting at 10.47.100.100 
+	and ending at 10.47.100.254.  Note that these installer automatically offers a suggested IP range based on the IP address of this server.</B> 
+	</div></TD></TR>    	
+<tr><TD VALIGN=BOTTOM COLSPAN=2 ALIGN=RIGHT><img src="../images/installer/help_icon.gif" onClick="toggleBox('fdDHCPIPSubnet');"><B>&nbsp; Subnet mask:</B> <INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_subnetmask_octet1 value="{{$dhcp_subnetmask_octet1}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_subnetmask_octet2 value="{{$dhcp_subnetmask_octet2}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_subnetmask_octet3 value="{{$dhcp_subnetmask_octet3}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_subnetmask_octet4 value="{{$dhcp_subnetmask_octet4}}"> </TD></TR>
+    	<TR><TD COLSPAN=2><B><div id="fdDHCPIPSubnet" CLASS="longDescription">Enter the subnet mask you want to use for this IP address range.  Typically 
+    		the mask will be something like 255.255.255.0 but your network may be different.</B> 
+	</div></TD></TR> 
+
+<tr><TD VALIGN=BOTTOM COLSPAN=2 ALIGN=RIGHT><img src="../images/installer/help_icon.gif" onClick="toggleBox('fdDHCPIPRouter');"><B>&nbsp; Gateway: </B><INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_gateway_octet1 value="{{$dhcp_gateway_octet1}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_gateway_octet2 value="{{$dhcp_gateway_octet2}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_gateway_octet3 value="{{$dhcp_gateway_octet3}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_gateway_octet4 value="{{$dhcp_gateway_octet4}}"> </TD></TR>
+    	<TR><TD COLSPAN=2><B><div id="fdDHCPIPRouter" CLASS="longDescription">Enter the gateway to be assigned to this DHCP range.</B> 
+	</div></TD></TR>
+
+<tr><TD VALIGN=BOTTOM COLSPAN=2 ALIGN=RIGHT><img src="../images/installer/help_icon.gif" onClick="toggleBox('fdDHCPIPDNS1');"><B>&nbsp; DNS Server:</B> <INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_dns1_octet1 value="{{$dhcp_dns1_octet1}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_dns1_octet2 value="{{$dhcp_dns1_octet2}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_dns1_octet3 value="{{$dhcp_dns1_octet3}}">.<INPUT TYPE=TEXT SIZE=3 MAXLENGTH=3  name=dhcp_dns1_octet4 value="{{$dhcp_dns1_octet4}}"> </TD></TR>
+    	<TR><TD COLSPAN=2><B><div id="fdDHCPIPDNS1" CLASS="longDescription">Enter the DNS server to be assigned to this DHCP range.  DNS is used to resolve
+    		hostnames to IP addresses.</B> 
+	</div></TD></TR>
+</TABLE>

@@ -1,0 +1,22 @@
+display installer/i386/boot-screens/f1.txt
+timeout 150
+prompt 1
+ipappend 2
+default menu
+
+F1 installer/i386/boot-screens/f1.txt
+
+label local
+	localboot 0
+label menu
+	menu label Fastdeploy Menu
+	kernel menus/menu.c32
+	append menus/menu.conf
+label dsl
+  kernel installer/i386/DSL/linux24
+  append ramdisk_size=100000 init=/etc/init lang=us apm=power-off vga=791 initrd=installer/i386/DSL/minirt24.gz nomce noapic quiet BOOT_IMAGE=knoppix frominitrd
+label rip
+  kernel installer/i386/RIP/kernel
+  append vga=normal initrd=installer/i386/RIP/rootfd.cgz root=/dev/ram0 rw
+label solaris
+  kernel installer/i386/Solaris/10/grub/pxegrub

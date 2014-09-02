@@ -1,0 +1,34 @@
+ {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  {{/if}}
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+	<div dojoType="ContentPane" layoutAlign="top" id="bluebox">
+	
+		This Windows operating system install image has been added:
+	<p>
+		<label for="image_name"><b>Image name: </b></label> {{$image_name}}
+	</P>
+	<P>
+		<label for="image_path"><b>Image path: </b></label> {{$image_path}}
+	</P>
+	<P>
+		<label for="image_path"><b>OS Version: </b></label> {{$os_version}}
+	</P>
+	<P>
+		<label for="image_path"><b>OS Subversion: </b></label> {{$os_subversion}}
+	</P>
+	<P>
+		<label for="image_path"><b>CPU Architecture: </b></label> {{$arch}}
+	</P>
+	<BR>
+	<B>
+	 This image will now be available for use by the appropriate Windows version.
+	</B>
+	</div>

@@ -1,0 +1,19 @@
+{
+        identifier: 'id',
+        label: 'label',
+        items: [
+                
+                { type: 'os', id: 'RedHat_4_Enterprise', label: "RedHat 4 Enterprise" },
+                { type: 'os', id: 'RedHat_5_Enterprise', label: "RedHat 5 Enterprise" },
+                { type: 'os', id: 'CentOS_4_5', label: "CentOS 4.5" },
+                { type: 'os', id: 'CentOS_5', label: "CentOS 5" },
+                { type: 'os', id: 'Fedora_5', label: "Fedora 5" },
+                { type: 'os', id: 'Fedora_6', label: "Fedora 6" },
+                { type: 'os', id: 'Fedora_7', label: "Fedora 7" },
+                { type: 'os', id: 'Debian_4', label: "Debian 4" },
+                { type: 'os', id: 'Debian_3_1', label: "Debian 3.1" },
+                { type: 'os', id: 'Windows_XP_Professional', label: "Windows XP Professional" },
+                { type: 'os', id: 'Windows_2003_Standard', label: "Windows 2003 Standard" },
+                { type: 'os', id: 'Windows_2003_Enterprise', label: "Windows 2003 Enterprise" }
+        ]
+}

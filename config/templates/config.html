@@ -1,0 +1,85 @@
+ {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  {{/if}}
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+	<div dojoType="ContentPane" layoutAlign="top" id="bluebox">
+		<table>                                              
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.db.label}}</th>
+		        <td align=left>{{$form_data.db.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.dbhost.label}}</th>
+		        <td align=left>{{$form_data.dbhost.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.dbuser.label}}</th>
+		        <td align=left>{{$form_data.dbuser.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.dbpassword.label}}</th>
+		        <td align=left>{{$form_data.dbpassword.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.mirror_dir.label}}</th>
+		        <td align=left>{{$form_data.mirror_dir.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.mirror_server.label}}</th>
+		        <td align=left>{{$form_data.mirror_server.html}}</td>
+		      </tr>
+	      	      <tr>
+		        <th align=right class=form_font>{{$form_data.baseurl.label}}</th>
+		        <td align=left>{{$form_data.baseurl.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.tftpboot.label}}</th>
+		        <td align=left>{{$form_data.tftpboot.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.configfiles.label}}</th>
+		        <td align=left>{{$form_data.configfiles.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.configfiles_url.label}}</th>
+		        <td align=left>{{$form_data.configfiles_url.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.bootconfig.label}}</th>
+		        <td align=left>{{$form_data.bootconfig.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.email.label}}</th>
+		        <td align=left>{{$form_data.email.html}}</td>
+		      </tr>
+		     
+		         <tr>
+		        <th align=right class=form_font>{{$form_data.anonstats.label}}</th>
+		        <td align=left>{{$form_data.anonstats.html}}</td>
+		      </tr>
+		      
+		       <tr>
+		        <th align=right valign=top class=form_font>{{$form_data.language.label}}</th>
+		        <td align=left>{{$form_data.language.html}}</td>
+		      </tr>
+		       
+	           </table>
+	           <table width=100%>
+			 {{if $form_data.requirednote and not $form_data.frozen}}
+			    <tr>
+			      <td valign="top" align=right>{{$form_data.requirednote}}</td>
+			    </tr>
+  			{{/if}}
+		      <tr>
+		        <td align=RIGHT><input type=submit value="DONE" class=submit3D></td>
+		      </tr>
+		</table>
+	</div>
+	

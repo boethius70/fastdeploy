@@ -1,0 +1,41 @@
+{{literal}}<style type="text/css">
+    .errorMessage {
+        color:red;
+        /*  et cetera.  */
+    }}
+</style>{{/literal}}
+
+{{* if the $form uses client-side validation, $form.javascript is essential 
+otherwise the onsubmit handler will call a nonexistent function and fail. also,
+we could have placed this in the HEAD of the document if we pleased.
+*}}
+
+{{$form.javascript}}
+
+{{if $form.errors}}
+    <p style="font-size:14pt">D'oh! Your form is no good (as noted below)</p>
+{{elseif $response}}
+    <p style="font-size:14pt">{{$response|escape}}. 
+    I like {{$form.beer.value[0]}} too</p>
+{{/if}}
+
+<form {{$form.attributes}}>
+<table summary="os_form" border="0" width=700 border=0 cellpadding=0 cellspacing=0>
+    <tr>
+        <td align="right" valign="top">
+        	<span style="color: #ff0000">*</span> 
+            {{$form.name.label}}</td>
+            <td valign="top" align="left">
+            {{if $form.name.error}}<span class="errorMessage">
+                {{$form.name.error}}</span><br />
+            {{/if}}
+            {{$form.name.html}}
+        </td>
+    </tr>
+    <tr>
+        <td align="right" valign="top">
+	{{$form}}
+</TD>
+</TR>
+</TABLE>
+</form>

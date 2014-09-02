@@ -1,0 +1,46 @@
+ {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  {{/if}}
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+	<div dojoType="ContentPane" layoutAlign="top" id="bluebox">
+		<table>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.image_name.label}}</th>
+		        <td align=left>{{$form_data.image_name.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.image_path.label}}</th>
+		        <td align=left>{{$form_data.image_path.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.os_version.label}}</th>
+		        <td align=left>{{$form_data.os_version.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.os_subversion.label}}</th>
+		        <td align=left>{{$form_data.os_subversion.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.arch.label}}</th>
+		        <td align=left>{{$form_data.arch.html}}</td>
+		      </tr>
+	           </table>
+	           <table width=100%>
+			 {{if $form_data.requirednote and not $form_data.frozen}}
+			    <tr>
+			      <td valign="top" align=right>{{$form_data.requirednote}}</td>
+			    </tr>
+  			{{/if}}
+		      <tr>
+		        <td align=RIGHT><input type=submit value="DONE" class=submit3D></td>
+		      </tr>
+		</table>
+	</div>
+	

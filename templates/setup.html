@@ -1,0 +1,96 @@
+<html>
+	<head><title>FastDeploy :: Setup</title>		
+<script type="text/javascript">
+	var djConfig = {
+	isDebug: true,
+	debugAtAllCosts: true
+};
+</script>
+<script type="text/javascript" src="js/dojo/dojo.js"></script>
+<script type="text/javascript">
+	dojo.require("dojo.widget.Wizard");
+	dojo.hostenv.writeIncludes();
+
+    function cancel() {
+        alert("Wizard Cancelled!");
+    }
+
+    function done() {
+        alert("Wizard Done!");
+    }
+</script>
+<script src="js/fastDeployCommon.js"></script>	
+<style type="text/css">
+body {
+	font-family : sans-serif; font-size : 10pt;
+}
+</style>
+<LINK REL=stylesheet HREF="css/fastdeploy.css" TYPE="text/css">
+</head>
+<body>
+<div id="wizard1" dojoType="WizardContainer"
+         style="width: 100%; height: 200px;"
+         nextButtonLabel="next >>"
+         previousButtonLabel="<< previous"
+         cancelFunction="cancel"
+         class="WizardContainer"
+         >
+        <div dojoType="WizardPane" label="Welcome">
+            <h1>Welcome to FastDeploy!</h1>
+           
+            FastDeploy is a full-featured open source (<a href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a>) system to automatically deploy operating systems.  Or, at least,
+            it aspires to be such a system.  It is designed to run automatic O/S deployments over a network using PXE but it does 
+            support the building of automated boot CDs and DVDs as well.
+            <BR><BR>
+            There are three main software pieces to run a proper FastDeploy system:
+            <OL>
+            	<LI> A configurable DHCP server.  ISC DHCPv2 or v3; Windows Server DHCP (NT, 2K, 2K3, etc.); and a variety of other
+            		DHCP servers.  This does <b>not</b> have to run on the same server that is running the FastDeploy web app.
+            	<LI> A TFTP server that supports PXE booting.  Most newer TFTP server implementations support the PXE boot options. 
+            		"Known good" TFTP servers include tftpd-hpa and atftpd.  Given that most DHCP servers run as the root or
+            		superuser this setup script makes no attempt to configure the DHCP, but rather you'll be offered guidance on 
+            		the few simple options that need to be setup on your ISC or Windows DHCP server.
+            	<LI> A web server running PHP4 with either MySQL or PostgreSQL database extensions.  This is obviously the key component
+            		to run the FastDeploy PHP web application itself. 
+            	<LI> Either a PostgreSQL or MySQL database.  This can be and often is on the same server as the FastDeploy server.
+            </OL>
+            <BR>
+            This script will try to determine what piece(s) you do or do not have on this server already.  If this script is running obviously
+            you have PHP already but we'll check on the other pieces as well. 
+          </FONT>
+        </div>
+        <div dojoType="WizardPane">
+            
+            <table width=600 align=middle>
+            	<tr><TD align=left colspan=3><b>Installed packages...</b></td></tr>
+            	<tr style="background-color: #ccccff"><TD align=right><b>Package</b></TD><TD ALIGN=LEFT><b>Installed?</b></TD><td></td></TR>
+            	<tr class={{$quickform}}> 
+            		<td align=right width=90%>HTML_QuickForm </td><td align=left> {{$quickform_toggle}}</td><td>{{$quickform_refresh}}</td>
+            	</tr>
+            	<tr class={{$quickform_advmultiselect}}> 
+            		<td align=right width=90%>HTML_QuickForm_advmultiselect </td><td align=left> {{$quickform_advmultiselect_toggle}}</td><td>{{$quickform_advmultiselect_refresh}}</td>
+            	</tr>
+            	<tr class={{$filesearch}}> 
+            		<td align=right width=90%>File_SearchReplace </td><td align=left> {{$filesearch_toggle}}</td><td>{{$filesearch_refresh}}</td>
+            	</tr>
+            	<tr class={{$mdb2}}> 
+            		<td align=right width=90%>MDB2 </td><td align=left> {{$mdb2_toggle}}</td><td>{{$mdb2_refresh}}</td>
+            	</tr>
+            	<tr class={{$tftp}}> 
+            		<td align=right width=90%>TFTP Server</td><td align=left> {{$tftp_toggle}}</td><td>{{$tftp_refresh}}</td>
+            	</tr>
+            </table>
+
+        </div>
+        <div dojoType="WizardPane" doneFunction="done">
+            <h1>Tab 3</h1>
+
+            You won't be able to come back, but you can finish now...
+        </div>
+        <div dojoType="WizardPane" doneFunction="done">
+            <h1>Tab 5</h1>
+            ... and now you can finish up.
+        </div>
+    </div>
+</body>
+</html>

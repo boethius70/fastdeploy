@@ -1,0 +1,69 @@
+/* installer styles */
+.installer { 
+	font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+	
+}
+.installer tr { 
+	font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+	background-color: #2175bc; 
+}
+.installerLine {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+	background: #fff url(../../images/installer/gradientbg.jpg) repeat-x;}
+}
+.installerBody { 
+	font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+	background: #fff url(../../images/installer/gradientbg.jpg) repeat-x;}
+}
+.navigation
+{
+list-style-type: none;
+margin: 0;
+padding: .5em 0;
+font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+border-top: 1px solid #666;
+}
+
+.navigation a
+{
+display: block;
+width: 5em;
+color: #FFF;
+background-color: #036;
+padding: .2em 0;
+font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+text-align: center;
+text-decoration: none;
+}
+
+input.submit
+{
+display: block;
+width: 5em;
+color: #FFF;
+background-color: #036;
+padding: .2em 0;
+font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+text-align: center;
+text-decoration: none;
+}
+
+.navigation a:hover
+{
+color: #FFF;
+font: normal 90% 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+background-color: #69C;
+}
+
+.navigation .left { float: left; }
+.navigation .right { float: right; }
+
+.longDescription { visibility: hidden; 
+                   display: none; 
+                  
+	          }
+	          
+.rightBorder { border-right : solid black 1px; } 
+/* end of installer CSS */

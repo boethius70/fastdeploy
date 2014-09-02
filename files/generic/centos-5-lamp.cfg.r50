@@ -1,0 +1,35 @@
+# FastDeploy Kickstart file 
+# by:  Jim Antoniou
+# Date:  6.12.2006
+# 
+# Notes:  This is compatible with RHEL; not sure about other 
+# RedHat and RH-based distributions.  Testing due there.
+install
+# language / keyboard include
+#lang en
+#langsupport --default en en
+
+#keyboard us 
+#mouse generic3ps/2 --device psaux
+skipx
+text
+network --device eth0 --bootproto=dhcp --hostname=centos --noipv6
+# 
+url --url http://192.168.1.15/mirrors/CentOS/5/i386 
+firewall --disabled
+#authconfig --enableshadow --enablemd5
+#timezone US/Pacific
+#bootloader --location=mbr 
+# partitions include 
+#clearpart  --all
+#autopart
+#reboot
+#vnc
+#%packages --resolvedeps
+#@web-server
+#@mysql
+#mysql-server
+#%post
+#/sbin/chkconfig --level 345 httpd on
+#/sbin/chkconfig --level 345 mysqld on
+#%pre

@@ -1,0 +1,70 @@
+d-i     debian-installer/country        string US
+d-i     debian-installer/locale         string en_US.UTF-8
+# hopefully this will avoid most DHCP server slowness issues...
+d-i 	netcfg/dhcp_timeout 	string 120 
+d-i  	netcfg/get_hostname                string argyle
+d-i  	netcfg/get_domain                  string dizzlebops.com
+d-i 	netcfg/choose_interface            select eth0
+d-i 	netcfg/disable_dhcp                boolean true
+d-i 	netcfg/get_nameservers             string 10.253.0.32 
+d-i 	netcfg/get_ipaddress               string 10.50.1.95
+d-i 	netcfg/get_netmask                 string 255.255.255.0
+d-i 	netcfg/get_gateway                 string 10.50.1.1
+d-i 	netcfg/confirm_static              boolean true
+d-i	mirror/country			string enter information manually
+d-i	mirror/http/hostname		string 10.50.1.91
+d-i	mirror/http/directory		string /mirrors/Debian/3_1
+base-config	apt-setup/hostname	string 10.50.1.91
+base-config	apt-setup/directory	string /mirrors/Debian/3_1
+d-i	partman-auto/disk			string /dev/discs/disc0/disc
+d-i	partman-auto/choose_recipe		select All files in one partition (recommended for new users)
+d-i	partman-auto/method			string lvm
+d-i	partman-auto/purge_lvm_from_device	boolean true
+#d-i	partman-auto/init_automatically_partition	select Automatically set up LVM
+d-i	partman/confirm_write_new_label 	boolean true
+d-i	partman/choose_partition		select Finish partitioning and write changes to disk
+d-i	partman/confirm			boolean true
+d-i	grub-installer/only_debian		boolean true
+d-i	finish-install/reboot_in_progress	note
+d-i 	prebaseconfig/reboot_in_progress 	note
+#user-setup	passwd/root-password-crypted	string	asdf
+#d-i	passwd/root-password-crypted 		password asdf
+passwd		passwd/root-password	string asdf
+passwd		passwd/root-password-again	string asdf
+
+# This first command is run as early as possible, just after
+# preseeding is read.
+d-i preseed/early_command			string 
+
+# and this gets run just before the /target is unmounted
+d-i	preseed/late_command		string wget -q -T 10 --spider "http://10.50.1.91/ops.php?op=1&sessid=5c0876a11547eac89aade130af1683f3&serverid=116&customer_id=admin&os_name=Debian&os_version=3_1"; echo "auto lo" > /etc/network/interfaces; echo  "iface lo inet loopback" >> /etc/network/interfaces ;echo "auto eth0 " >> /etc/network/interfaces ;echo "iface eth0 inet static " >> /etc/network/interfaces ;echo "address 10.50.1.95 " >> /etc/network/interfaces ;echo "netmask 255.255.255.0" >> /etc/network/interfaces ;echo "gateway 10.50.1.1" >> /etc/network/interfaces ; echo "argyle" > /etc/hostname ; /bin/hostname -F /etc/hostname ; echo "domain serverminds.com" > /etc/resolv.conf; echo "nameserver 10.253.0.32" >>/etc/resolv.conf
+#d-i	preseed/late_command		string wget -q -T 10 --spider "http://10.50.1.91/ops.php?op=1&sessid=5c0876a11547eac89aade130af1683f3&serverid=116&customer_id=admin&os_name=Debian&os_version=3_1"; echo "argyle" > /etc/hostname
+base-config 	base-config/late_command    	string wget -q -T 10 --spider "http://10.50.1.91/ops.php?op=1&sessid=5c0876a11547eac89aade130af1683f3&serverid=116&customer_id=admin&os_name=Debian&os_version=3_1"; echo "auto lo" > /etc/network/interfaces; echo  "iface lo inet loopback" >> /etc/network/interfaces ;echo "auto eth0 " >> /etc/network/interfaces ;echo "iface eth0 inet static " >> /etc/network/interfaces ;echo "address 10.50.1.95 " >> /etc/network/interfaces ;echo "netmask 255.255.255.0" >> /etc/network/interfaces ;echo "gateway 10.50.1.1" >> /etc/network/interfaces ; echo "argyle" > /etc/hostname ; /bin/hostname -F /etc/hostname ; echo "domain serverminds.com" > /etc/resolv.conf; echo "nameserver 10.253.0.32" >>/etc/resolv.conf
+base-config	base-config/intro	note 
+base-config	base-config/login	note 
+base-config	tzconfig/gmt		boolean true
+passwd		passwd/make-user		boolean false
+base-config	apt-setup/uri_type		select http
+base-config	apt-setup/country		select enter information manually
+base-config	apt-setup/another		boolean false
+base-config	apt-setup/security-updates	boolean true
+tasksel		tasksel/first		multiselect	Web server,DNS server,Mail server
+
+# this is a sarge-ism, don't bother in etch installs
+d-i base-config/late_command string bash /var/tmp/base-config.late_command 2>&1 | tee /var/log/installer/base-config.late_command.out
+
+ssh	ssh/protocol2_only	boolean true
+ssh	ssh/run_sshd		boolean true
+ssh	ssh/SUID_client		boolean false
+
+# Joey says: For some reason this question is asked on hppa and a few other
+# archs (due to serial console install?)
+console-data console-data/keymap/policy select Don't touch keymap
+#=-=-=-=-
+
+# cut installation down to the bone
+#base-install base_install/base_excludes string at,exim4,exim4-base,exim4-config,exim4-daemon-light,mailx,pcmcia-cs,setserial,info,libident,libgnutls11,libgcrypt1,liblzo1,libopencdk8,libtasn1-0,liblockfile1,libpcre3,libpcap0.7,tasksel,telnet,libtextwrap1,ipchains,ppp,pppoe,pppoeconf,pppconfig
+
+#d-i	preseed/run	string start.sh
+exim4-config exim4/dc_eximconfig_configtype     select no configuration at this time
+exim4-config exim4/dc_postmaster        string

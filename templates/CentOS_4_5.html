@@ -1,0 +1,140 @@
+  {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  {{/if}}
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+    <div dojoType="SplitContainer"
+		orientation="vertical"
+		sizerWidth="2"
+		activeSizing="0"
+		style="width: 100%; height: 100%; background: #ffffff; padding: 0px;"
+	>
+	<div dojoType="ContentPane" sizeShare="6" style="overflow: auto; background-color: #D6E2F4; border: 1px solid #6290D2; "">
+  		<div class="os_icon">{{$form_data.os_icon.label}} <b> {{$form_data.os_friendly_name.label}}</b></div>
+	</div>
+    	<div id="mainTabContainer" dojoType="TabContainer"  sizeShare=85 selectedTab="tab1">
+		    <div id="tab1" dojoType="ContentPane" class="contentFlow" label="General Options">
+		       <table>
+		       	  {{if $form_data.profile_create_name}}
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.profile_create_name.label}}</th>
+		        <td align=left>{{$form_data.profile_create_name.html}}</td>
+		      </tr>	
+		    {{/if}}
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.hostname.label}}</th>
+		        <td align=left>{{$form_data.hostname.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.domain.label}}</th>
+		        <td align=left>{{$form_data.domain.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.mac.label}}</th>
+		        <td align=left>{{$form_data.mac.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.addr_type.label}}</th>
+		        <td align=left>{{$form_data.addr_type.html}}</td>
+		      </tr>
+		 </table>
+		      <div id="staticset" style="display: none;"> 
+		      <table>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.ipaddr.label}}</th>
+		        <td align=left>{{$form_data.ipaddr.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.netmask.label}}</th>
+		        <td align=left>{{$form_data.netmask.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.gateway.label}}</th>
+		        <td align=left>{{$form_data.gateway.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.dns_1.label}}</th>
+		        <td align=left>{{$form_data.dns_1.html}}</td>
+		      </tr>
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.dns_2.label}}</th>
+		        <td align=left>{{$form_data.dns_2.html}}</td>
+		      </tr>
+		</table>
+		 </div>
+		 <table>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.password.label}}</th>
+		        <td align=left>{{$form_data.password.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.password_confirm.label}}</th>
+		        <td align=left>{{$form_data.password_confirm.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.lang.label}}</th>
+		        <td align=left>{{$form_data.lang.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.tz.label}}</th>
+		        <td align=left>{{$form_data.tz.html}}</td>
+		      </tr>
+		      <tr>
+		        <th valign=bottom align=right class=form_font>{{$form_data.cpu.label}}</th>
+		        <td valign=bottom align=left>{{$form_data.cpu.html}}</td>
+		      </tr>
+		        <tr>
+		        <th valign=bottom align=right class=form_font>{{$form_data.hd.label}}</th>
+		        <td valign=bottom align=left>{{$form_data.hd.html}}</td>
+		      </tr>
+		      <tr>
+		        <th align=right class=form_font>{{$form_data.notify.label}}</th>
+		        <td align=left>{{$form_data.notify.html}}</td>
+		      </tr>   
+		       <tr>
+		        <th align=right class=form_font>{{$form_data.redeploy.label}}</th>
+		        <td align=left>{{$form_data.redeploy.html}}</td>
+		      </tr>  
+		    </table>
+		 </div>
+		<div id="tab2" dojoType="ContentPane" label="Install Tasks">
+		    <table>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.pre_install.label}}</th>
+		        <td align=left>{{$form_data.pre_install.html}}</td>
+		      </tr>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.post_install.label}}</th>
+		        <td align=left>{{$form_data.post_install.html}}</td>
+		      </tr>
+		     </table>
+		</div>
+		<div id="tab3" dojoType="ContentPane" label="Software Selection">
+		    <table>
+		      <tr>
+		        <th valign=top align=right class=form_font_only>{{$form_data.software.label}}</th>
+		        <td align=left>{{$form_data.software.html}}</td>
+		      </tr>
+		     </table>
+		</div>
+  	</div>
+	<div dojoType="ContentPane" sizeShare="10" style="overflow: auto; background-color: #D6E2F4; border: 1px solid #6290D2; "">
+		<table width=100%>
+			 {{if $form_data.requirednote and not $form_data.frozen}}
+			    <tr>
+			      <td valign="top" align=right>{{$form_data.requirednote}}</td>
+			    </tr>
+  			{{/if}}
+		      <tr>
+		        <td align=RIGHT><input type=submit value="DONE" class=submit3D></td>
+		      </tr>
+		</table>
+	</div>
+  </div>
+  </form>

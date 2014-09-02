@@ -1,0 +1,67 @@
+<html><head><TITLE> {{$title}} </TITLE>
+<LINK REL="stylesheet" HREF="{{$css}}" TYPE="text/css">
+<script type="text/javascript" src="js/dojo.js"></script>
+<script>
+
+	var djConfig = {isDebug: false};
+	//djConfig.debugAtAllCosts = true;
+	dojo.require("dojo.event.*");
+	dojo.require("dojo.widget.LayoutContainer");
+
+function clearMe() /* to clear the screen in case of a login prompt */
+{
+  var _s=top;
+  var _d=_s.document;
+  _d.open();
+  _d.write("");
+  _d.close();
+}
+
+function refresh()
+{
+    //  This version does NOT cause an entry in the browser's
+    //  page view history.  Most browsers will always retrieve
+    //  the document from the web-server whether it is already
+    //  in the browsers page-cache or not.
+    //  
+    window.location.replace( sURL );
+}
+
+/* sets form field focus */ 
+function putFocus(formInst, elementInst) {
+  if (document.forms.length > 0) {
+   document.forms[formInst].elements[elementInst].focus();
+  }
+}
+
+</script>
+</head>
+
+<body bgcolor=#ffffff onLoad="refresh; putFocus(0,0)">
+		<center>
+		<div dojoType="LayoutContainer" layoutChildPriority='top-bottom' style="width: 100%; height: 100%; padding: 0px;">
+			<div dojoType="ContentPane" layoutAlign="bottom" style="background-color: #ffffff; color: black;">
+				<FORM ACTION="login.php" METHOD=POST>
+				<table cellspacing=0 class="fQuestion">
+				<tr><td align=center valign=bottom><B>Please login first:</td></tr>
+				</table>
+				<table cellspacing=0 height=115 width=295 cellpadding=0 border=0 background="images/login.png">
+				<tr><td>
+					<table cellspacing=0 height=70 width=100% cellpadding=0 border=0>
+					<tr><td class="fQuestion" align=right valign=bottom><B>Username:</b></td><td class="fQuestion" align=left valign=bottom><Input type=text size=20 maxlength=20 name=username value={{$username}}></td></tr>
+					<tr><td class="fQuestion" align=right valign=top><B>Password:</b></td><td class="fQuestion" align=left valign=top><Input type=password size=20 maxlength=20 name=password value={{$password}}></td></tr>			
+					<tr><td colspan=2 class="fQuestion" align=middle valign=top><INPUT CLASS="btn" TYPE=SUBMIT VALUE="Login to FastDeploy"></td></tr>
+					</table>
+				</td></tr>
+				</table>
+				</FORM>
+				<table cellspacing=0 height=115 width=310 cellpadding=0 border=0>
+				<tr><td valign=top><font color="red" style="font-size: 10pt;">{{$result}}</td></tr>
+				<tr><td align=middle valign=top><font style="font-size: 10pt;">
+			>>> <a href="http://www.fastdeploy.com">www.fastdeploy.com </a> <<< </td></tr>
+				</table>
+			</div>
+		</div>
+		</center>
+</body>
+</html>

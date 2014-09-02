@@ -1,0 +1,28 @@
+  {if $form_data.javascript}
+  <script language="javascript">
+  <!-- 
+      {$form_data.javascript}
+  //-->
+  </script>
+  {/if}
+  <form {$form_data.attributes}>
+    <!-- important hidden fields -->
+   {$form_data.hidden}
+   
+    <!-- Display the fields -->
+    <table>
+      <tr>
+        <th valign=bottom align=right class=form_font>{$form_data.sal_id.label}</th>
+        <td valign=bottom align=left>{$form_data.sal_id.html}</td>
+      </tr>
+      <tr>
+        <th valign=bottom align=right class=form_font>{$form_data.firstname.label}</th>
+        <td valign=bottom align=left>{$form_data.firstname.html}</td>
+      </tr>
+      <tr>
+        <th valign=bottom align=right class=form_font>{$form_data.lastname.label}</th>
+        <td valign=bottom align=left>{$form_data.lastname.html}</td>
+      </tr>
+      <tr colspan=2><td align=right><input type=submit value="Done"></td></tr>
+    </table>
+  </form>

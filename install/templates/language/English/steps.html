@@ -1,0 +1,22 @@
+<form action="install.php?{{$step_url}}" name=install METHOD=POST>
+	{{$hidden}}
+<table width="100%" border="0" cellpadding="0" class=installerLine>
+  <tr valign=top bgcolor=#c9c9c9><td><B>New Installation :: Step {{$number}} :: {{$step_description}}</B></td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" class=installerLine>
+	<TR><TD>
+		{{if ($number=="2") }} 
+			{{$body}}
+		
+		{{else}}
+    			{{include file=$body}}
+    		{{/if}}
+</TD></TR>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class=navigation>
+  <tr bgcolor=#c9c9c9>
+<td ALIGN="RIGHT"> {{$next_button}}</td>
+  </tr>
+</table>
+</FORM>

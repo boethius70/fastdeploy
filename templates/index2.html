@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>FastDeploy :: Automated Operating System Installation</title>
+
+    <script type="text/javascript" src="http://o.aolcdn.com/dojo/0.9.0/dojo/dojo.xd.js" djConfig="parseOnLoad: true"></script>
+    <script type="text/javascript">
+        dojo.require("dojo.parser");
+        dojo.require("dojo.data.ItemFileWriteStore");
+        dojo.require("dijit.Toolbar"); 
+        dojo.require("dijit.Tree");
+        dojo.require("dijit.layout.LayoutContainer");
+        dojo.require("dijit.layout.SplitContainer");
+        dojo.require("dijit.layout.AccordionContainer");
+        dojo.require("dijit.layout.TabContainer");
+        dojo.require("dijit.layout.ContentPane");
+    </script>
+
+        <style type="text/css">
+                @import "http://o.aolcdn.com/dojo/0.9.0/resources/dojo.css";
+                @import "http://o.aolcdn.com/dojo/0.9.0/dijit/themes/tundra/tundra.css";
+                @import "http://o.aolcdn.com/dojo/0.9.0/dijit/themes/soria/soria.css";
+                @import "http://o.aolcdn.com/dojo/0.9.0/dijit/demos/mail/mail.css";
+                html, body, #mainDiv {
+		    width: 100%; height: 100%;
+		    border: 0; padding: 0; margin: 0;
+ 	     }
+        </style>
+
+</head>
+<body class="soria">
+     	<div dojoType="dojo.data.ItemFileWriteStore" jsId="OSitems" url="json.php?op=OSes"></div>
+     	<div dojoType="dijit.layout.LayoutContainer" id="mainDiv">
+    		<div dojoType="dijit.Toolbar" layoutAlign="top">...</div>
+    		<div dojoType="dijit.layout.SplitContainer" orientation="horizontal" layoutAlign="client" sizerWidth="3">
+   			<div dojoType="dijit.layout.AccordionContainer" sizeMin="10" sizeShare="14">
+	                           	<div dojoType="dijit.layout.AccordionPane" title="Operating Systems to Deploy">
+	                                  	<div dojoType="dijit.Tree" id="addrTree" store="OSitems" labelAttr="label" query="{type:'os'}">
+						<script type="dojo/method" event="getIconClass" args="item">
+						      	var specifiedIcon = OSitems.getValue(item, "icon");
+							return specifiedIcon || "mailIconFolderDocuments";
+						</script>
+					</div> 
+	                           	</div>
+	                  	</div>
+    			<div dojoType="dijit.layout.SplitContainer" orientation="vertical" sizerWidth="3">
+		            	<div dojoType="dijit.layout.ContentPane" title="welcomeMain" sizeShare="80" sizeMin="70">Welcome to Fastdeploy</div>
+		        	  	<div dojoType="dijit.layout.ContentPane" title="bottomMain"></div>
+    			</div>
+	</div>
+</body></html>

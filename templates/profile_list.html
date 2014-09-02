@@ -1,0 +1,13 @@
+  {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  {{/if}}
+<table width=100% cellspacing=0 cellpadding=0 border=0 class=data_set>
+  	<tr bgcolor=#cccccc><td><b>operating system</b></td><td><b>profile name</b></td>
+	   	          <td><b>edit</b></td><td><b>deploy</b></td><td><b>delete</b></td>
+	</tr>
+{{$data_set}}
+</table>

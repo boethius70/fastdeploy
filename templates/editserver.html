@@ -1,0 +1,62 @@
+<table width=100% border=0 cellspacing=1 cellpadding=0 align=center> 
+<tr><td class="pageTitle uline">FastDeploy Services :: {{$stage_val_display}}</td></tr><table>
+{{$errors}}
+<table border="0" cellspacing="2" cellpadding="0">
+<form name="deployForm" method="POST" action="edit.php">
+<input type=hidden value={{$stage}} name="stage"> 
+{{$stage_display}}
+<tr><td align=right class=tblColBg>Pick an operating system to install:</td><td align=left><select tabindex=1 name="os"> 
+		 <option value="">--> Pick an operating system </option>
+                     <option value="centos4" {{$selected_os_c4}}>CentOS 4 - Latest</option>
+                     <option value="centos3.6" {{$selected_os_c35}}>CentOS 3.6</option>
+                     <option value="centos3.5" {{$selected_os_c36}}>CentOS 3.5</option>
+                     <option value="fedora3" {{$selected_os_f3}}>Fedora Core 3</option>
+                     <option value="fedora4" {{$selected_os_f4}}>Fedora Core 4</option>
+                     <option value="debian3.1" {{$selected_os_d31}}>Debian 3.1 - stable "sarge"</option>
+                     <option value="ubuntu" {{$selected_os_ub}}>Ubuntu 5.10 - stable "breezy"</option>
+		</select> 
+		</td></tr>
+<tr><td align=right class=tblColBg>Enter system <a href="#" onClick="window.open('help.php?p=mac','mywindow','width=200,height=200')">MAC Address</A></td><td align=left><input type=text size=17 tabindex=2 onKeyUp="chkThis(this);" maxlength=17 value="{{$mac}}" name=mac></td></tr>				
+<tr><td align=right class=tblColBg>Network addressing</td><td align=left><input type=radio tabindex=3 name=addresstype value="dynamic" onClick="applyDisplay('off','static'); applyDisplay('off','ip');" {{$dynamic_type}}>Dynamic IP <input onClick="applyViz(this.checked,'static'); applyViz(this.checked,'ip');" type=radio name=addresstype value="static" {{$static_type}}>Static IP</td></tr>
+<tr><td id="static" style="display : none;" align=right valign=top class=tblColBg>&nbsp;</td><td align=left>
+<div id="ip" {{$ip_display}}><table cellspacing=0 cellpadding=0 border=0 width=100%>
+	<tr><td align=right>IP address:</td><td align=left><input type=text size=15 tabindex=5 name=ip value="{{$ip}}" name=ip size=15 maxlength=15></td></tr>
+	<tr><td align=right>Netmask:<td align=left><input type=text size=15 tabindex=6 name=netmask value="{{$netmask}}" name=netmask size=15 maxlength=15></td></tr>
+	<tr><td align=right>Gateway:<td align=left><input type=text size=15 tabindex=7 name=gateway value="{{$gateway}}" name=gateway size=15 maxlength=15></td></tr>
+	<tr><td align=right>Primary DNS:<td align=left><input type=text size=15 tabindex=8 name=dns_1 value="{{$dns_1}}" name=dns_1 size=15 maxlength=15></td></tr>
+	<tr><td align=right>Secondary DNS:<td align=left><input type=text size=15 tabindex=9 name=dns_2 value="{{$dns_2}}" name=dns_2 size=15 maxlength=15></td></tr>
+	</table>
+</div>				     
+</td></tr>
+<tr><td align=right class=tblColBg>Enter system <a href="#" onClick="window.open('help.php?p=hostname','mywindow','width=200,height=200')">hostname</A></td><td align=left><input type=text size=20 tabindex=10 maxlength=50 value="{{$hostname}}" name=hostname></td></tr>				
+<tr><td align=right class=tblColBg>Enter system <a href="#" onClick="window.open('help.php?p=domain','mywindow','width=200,height=200')">domain name</A></td><td align=left><input type=text size=20 tabindex=11 maxlength=50 value="{{$domain}}" name=domain></td></tr>				
+<tr><td align=right valign=top class=tblColBg>Choose standard server profile install options: </td>
+<td align=left><input type=checkbox tabindex=12 name="install_web_server" {{$web_server_sel}}>Web Server : Apache + PHP<BR>
+               <input type=checkbox tabindex=13 name="install_dns_server" {{$dns_server_sel}}>DNS Server : BIND<BR>
+               <input type=checkbox tabindex=14 name="install_mysql_server" {{$mysql_server_sel}}>MySQL Server<BR>			               
+</td></tr>
+<tr><td align=right class=tblColBg>Enter system <a href="#" onClick="window.open('help.php?p=rootpass','mywindow','width=200,height=200')">root password</A></td><td align=left><input type=password tabindex=16 size=20 maxlength=50 value="{{$rootpw_orig}}" name=rootpw_orig></td></tr>				
+<tr><td align=right class=tblColBg>Confirm root password</td><td align=left><input type=password size=20 tabindex=17 maxlength=50 value="{{$rootpw_orig}}" name=rootpw_confirm></td></tr>				
+<tr><td align=right class=tblColBg>Choose language: </td>
+    <td align=left><select name=language tabindex=18>
+                    {{$lang_list}}
+		</select>
+</td></tr>
+<tr><td align=right class=tblColBg>Choose the time zone: </td>
+<td align=left><select name=timezone tabindex=19>{{$tz_list}}</select>
+</td></tr>
+<TR>
+<td align=right class=tblColBg>Choose your CPU: </td><td align=left><input type=radio tabindex=20 name="arch" value="i386" {{$x86_checked}}>Intel/AMD x86 <input type=radio name="arch" value="x86_64" {{$x86_64_checked}}>AMD64 </td>
+</tr>
+<tr><td align=right class=tblColBg>Choose your hard drive type:</td><td align=left><input type=radio tabindex=21 name=harddrive value=ide {{$ide_checked}}>IDE <input type=radio name=harddrive value=scsi {{$scsi_checked}}>SCSI <input type=radio name=harddrive value=sata {{$sata_checked}}>Serial ATA</td></tr>
+<tr><td align=right class=tblColBg>Email notify after server is installed?</td><td align=left><input type=checkbox name=notify {{$notify_checked}}></td></tr>
+</table>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td align=right class=tblColBg>Confirm this setup > </td><td align=left><input type=submit tabindex=21 value="Deploy Server"></td></tr>
+
+</table>
+</form>
+
+<script language="JavaScript">
+document.deployForm.os.focus();
+</script>

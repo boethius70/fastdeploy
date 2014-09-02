@@ -1,0 +1,1135 @@
+-- MySQL dump 10.11
+--
+-- Host: localhost    Database: fastdeploy
+-- ------------------------------------------------------
+-- Server version	5.0.32-Debian_7etch1-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `CentOS_4_4`
+--
+
+DROP TABLE IF EXISTS `CentOS_4_4`;
+CREATE TABLE `CentOS_4_4` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `CentOS_4_4`
+--
+
+LOCK TABLES `CentOS_4_4` WRITE;
+/*!40000 ALTER TABLE `CentOS_4_4` DISABLE KEYS */;
+INSERT INTO `CentOS_4_4` VALUES (30,'admin','CentOS','4_4','','00-04-23-b2-51-ee','dynamic','','','','','','azzit','dizzlebops.com','en_SG','US/Alaska','i386','sata',NULL,'1 2','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(31,'admin','CentOS','4_4','','00-12-79-a6-4f-36','static','10.50.1.52','255.255.255.0','10.50.1.1','10.253.0.32','10.253.0.33','azzit','dizzlebops.com','en_US','US/Alaska','i386','sata',NULL,'1 2','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(28,'admin','CentOS','4_4','','profile','dynamic','','','','','','blade1','fastdeploy.com','en_US','US/Indiana-Starke','amd64','sata',NULL,'1','#!/bin/bash\n\ntest','',NULL,NULL,NULL,NULL,NULL,NULL,'CentOS 4.4 Standard Web Server',NULL),(29,'admin','CentOS','4_4','','00-0c-29-e5-62-6a','static','10.50.1.50','255.255.255.0','10.187.54.1','10.253.0.32','','blade1','fastdeploy.com','en_US','US/Pacific','amd64','sata',NULL,NULL,'#!/bin/bash\n\necho \'test\' > /root/test','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `CentOS_4_4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `CentOS_4_5`
+--
+
+DROP TABLE IF EXISTS `CentOS_4_5`;
+CREATE TABLE `CentOS_4_5` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `CentOS_4_5`
+--
+
+LOCK TABLES `CentOS_4_5` WRITE;
+/*!40000 ALTER TABLE `CentOS_4_5` DISABLE KEYS */;
+INSERT INTO `CentOS_4_5` VALUES (32,'admin','CentOS','4_5','','00-1a-92-6c-77-91','dynamic','','','','','','sac2','oortle.com','en_US','US/Pacific','x86_64','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `CentOS_4_5` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `CentOS_5`
+--
+
+DROP TABLE IF EXISTS `CentOS_5`;
+CREATE TABLE `CentOS_5` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  `hd_part_type` varchar(10) default NULL,
+  `hd_part_scheme` varchar(20) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `CentOS_5`
+--
+
+LOCK TABLES `CentOS_5` WRITE;
+/*!40000 ALTER TABLE `CentOS_5` DISABLE KEYS */;
+INSERT INTO `CentOS_5` VALUES (18,'admin','CentOS','5','','00-04-23-b2-51-ee','static','10.50.1.50','255.255.255.0','10.50.1.1','10.253.0.32','','argyle','dizzlebops.com','en_US','US/Pacific','i386','sata',NULL,'50','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(19,'admin','CentOS','5','','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','azzit','fastdeploy.com','en_US','US/Arizona','i386','sata',NULL,'50 54','#!/bin/bash\n\necho \'rtest\' > /root/test','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(20,'admin','CentOS','5','','00-1a-92-6c-77-eb','static','65.74.153.200','255.255.255.240','65.74.153.193','65.74.153.197','65.74.153.198','a120-72s0ag002237','serverminds.com','en_US','US/Pacific','i386','sata',NULL,'50 54 51','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(21,'admin','CentOS','5','','af-0d-32-12-45-aa','static','','','','','','abcd','domain.com','de_DE','Europe/Berlin','i386','sata',NULL,'50 51 52 54','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(22,'admin','CentOS','5','','00-1a-92-62-4d-0a','dynamic','','','','','','a100-73s0ag000790','dedi.serverminds.com','en_US','US/Pacific','i386','sata',NULL,'50 51 54','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(23,'admin','CentOS','5','','00-1a-92-62-4c-e0','dynamic','','','','','','a100-73s0ag000790','dedi.serverminds.com','en_AU','US/Pacific','i386','sata',NULL,'50 51 54','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(24,'admin','CentOS','5','','00-1a-92-62-4d-28','dynamic','','','','','','a100-73s0ag000771','dedi.serverminds.com','en_AU','US/Pacific','i386','sata',NULL,'54 51 50','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(25,'admin','CentOS','5','','00-0c-29-16-60-af','dynamic','','','','','','vmmanage','serverminds.com','en_US','US/Pacific','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(26,'admin','CentOS','5','','00-0c-29-82-e5-a2','dynamic','','','','','','vmmanage','serverminds.com','en_US','US/Pacific','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(27,'admin','CentOS','5','','ad-fa-df-da-fd-af','static','65465464','66','','','','d','asf.com','en_US','Africa/Accra','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(28,'admin','CentOS','5','','00:17:A4:DE:51:F3','static','192.168.1.2','','','','','utah','test.local','en_US','Europe/Amsterdam','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(30,'admin','CentOS','5','','01-01-01-01-01-01','dynamic','','','','','','dizzle','fribble.com','en_US','US/Indiana-Starke','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'auto',''),(31,'admin','CentOS','5','','profile','dynamic','','','','','','centos5-lamp','fastdeploy.com','en_US','US/Pacific','i386','sata',NULL,'50 54','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'auto','');
+/*!40000 ALTER TABLE `CentOS_5` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Debian_3_1`
+--
+
+DROP TABLE IF EXISTS `Debian_3_1`;
+CREATE TABLE `Debian_3_1` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Debian_3_1`
+--
+
+LOCK TABLES `Debian_3_1` WRITE;
+/*!40000 ALTER TABLE `Debian_3_1` DISABLE KEYS */;
+INSERT INTO `Debian_3_1` VALUES (116,'admin','Debian','3_1','','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','argyle','dizzlebops.com','en_US','US/Pacific','i386','ide',NULL,'Array','echo \'blah\' > /target/root/blah','',NULL,NULL,NULL,NULL,NULL,NULL),(117,'admin','Debian','3_1','','00-0f-20-d0-53-2f','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','apple','serverminds.com','en_US','US/Pacific','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Debian_3_1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Debian_4`
+--
+
+DROP TABLE IF EXISTS `Debian_4`;
+CREATE TABLE `Debian_4` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=120 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Debian_4`
+--
+
+LOCK TABLES `Debian_4` WRITE;
+/*!40000 ALTER TABLE `Debian_4` DISABLE KEYS */;
+INSERT INTO `Debian_4` VALUES (118,'admin','Debian','4','','00-1a-92-6c-77-eb','dynamic','','','','','','file1','serverminds.com','en_US','US/Pacific','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL),(119,'admin','Debian','4','','00-1a-92-62-4d-28','dynamic','','','','','','vmware1','taigle.com','en_US','US/Pacific','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Debian_4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Fedora_4`
+--
+
+DROP TABLE IF EXISTS `Fedora_4`;
+CREATE TABLE `Fedora_4` (
+  `serverid` bigint(20) NOT NULL default '0',
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Fedora_4`
+--
+
+LOCK TABLES `Fedora_4` WRITE;
+/*!40000 ALTER TABLE `Fedora_4` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Fedora_4` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Fedora_5`
+--
+
+DROP TABLE IF EXISTS `Fedora_5`;
+CREATE TABLE `Fedora_5` (
+  `serverid` bigint(20) NOT NULL default '0',
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Fedora_5`
+--
+
+LOCK TABLES `Fedora_5` WRITE;
+/*!40000 ALTER TABLE `Fedora_5` DISABLE KEYS */;
+INSERT INTO `Fedora_5` VALUES (0,'admin','Fedora','5','','00-04-23-b2-51-ee','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','deckard','serverminds.com','en_US','US/Central','i386','ide',NULL,'Array','','',NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Fedora_5` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Fedora_6`
+--
+
+DROP TABLE IF EXISTS `Fedora_6`;
+CREATE TABLE `Fedora_6` (
+  `serverid` bigint(20) NOT NULL default '0',
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Fedora_6`
+--
+
+LOCK TABLES `Fedora_6` WRITE;
+/*!40000 ALTER TABLE `Fedora_6` DISABLE KEYS */;
+INSERT INTO `Fedora_6` VALUES (0,'admin','Fedora','6','','00-0f-20-d0-53-2f','static','10.50.1.50','255.255.255.0','10.50.1.1','10.253.0.32','','deckard','serverminds.com','en_US','US/Pacific','i386','ide',NULL,'Array','','',NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Fedora_6` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Oracle_5_Enterprise`
+--
+
+DROP TABLE IF EXISTS `Oracle_5_Enterprise`;
+CREATE TABLE `Oracle_5_Enterprise` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Oracle_5_Enterprise`
+--
+
+LOCK TABLES `Oracle_5_Enterprise` WRITE;
+/*!40000 ALTER TABLE `Oracle_5_Enterprise` DISABLE KEYS */;
+INSERT INTO `Oracle_5_Enterprise` VALUES (1,'admin','Oracle','5','Enterprise','00-0c-29-82-e5-a2','dynamic','','','','','','vmmanage','serverminds.com','en_US','US/Pacific','i386','sata',NULL,'68 72','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Oracle_5_Enterprise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `RedHat_4_Enterprise`
+--
+
+DROP TABLE IF EXISTS `RedHat_4_Enterprise`;
+CREATE TABLE `RedHat_4_Enterprise` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `RedHat_4_Enterprise`
+--
+
+LOCK TABLES `RedHat_4_Enterprise` WRITE;
+/*!40000 ALTER TABLE `RedHat_4_Enterprise` DISABLE KEYS */;
+INSERT INTO `RedHat_4_Enterprise` VALUES (48,'admin','RedHat','4','Enterprise','00-0f-20-d0-53-2f','static','10.50.1.51','255.255.255.0','10.50.1.1','10.253.0.32','','blade1','serverminds.com','en_GB','US/East-Indiana','i386','ide',NULL,'Array','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `RedHat_4_Enterprise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `RedHat_5_Enterprise`
+--
+
+DROP TABLE IF EXISTS `RedHat_5_Enterprise`;
+CREATE TABLE `RedHat_5_Enterprise` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  `installation_number` char(16) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `RedHat_5_Enterprise`
+--
+
+LOCK TABLES `RedHat_5_Enterprise` WRITE;
+/*!40000 ALTER TABLE `RedHat_5_Enterprise` DISABLE KEYS */;
+INSERT INTO `RedHat_5_Enterprise` VALUES (49,'admin','RedHat','5','Enterprise','00-0d-60-53-20-e5','static','10.187.55.15','255.255.255.0','10.187.55.1','152.135.114.14','152.135.113.14','amd1','amat.com','en_US','US/Pacific','x86_64','scsi',NULL,'55 57','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'6a17a6ed6e53eda6');
+/*!40000 ALTER TABLE `RedHat_5_Enterprise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Ubuntu_6_10_Server`
+--
+
+DROP TABLE IF EXISTS `Ubuntu_6_10_Server`;
+CREATE TABLE `Ubuntu_6_10_Server` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=147 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Ubuntu_6_10_Server`
+--
+
+LOCK TABLES `Ubuntu_6_10_Server` WRITE;
+/*!40000 ALTER TABLE `Ubuntu_6_10_Server` DISABLE KEYS */;
+INSERT INTO `Ubuntu_6_10_Server` VALUES (146,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_US','US/Pacific','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(145,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_US','US/Pacific','i386','ide',NULL,'Array','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(144,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_AU','US/Pacific','i386','ide',NULL,'Array','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(143,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_AU','EET','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(142,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_AU','EET','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(141,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_AU','EET','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(139,'','Ubuntu','6_10','Server','00-12-79-a6-4f-36','static','10.50.1.95','255.255.255.0','10.50.1.1','10.253.0.32','','fiffle','serverminds.com','en_AU','EET','i386','ide',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Ubuntu_6_10_Server` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Ubuntu_7_10_Server`
+--
+
+DROP TABLE IF EXISTS `Ubuntu_7_10_Server`;
+CREATE TABLE `Ubuntu_7_10_Server` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Ubuntu_7_10_Server`
+--
+
+LOCK TABLES `Ubuntu_7_10_Server` WRITE;
+/*!40000 ALTER TABLE `Ubuntu_7_10_Server` DISABLE KEYS */;
+INSERT INTO `Ubuntu_7_10_Server` VALUES (1,'admin','Ubuntu','7_10','Server','00-1a-92-6c-77-eb','dynamic','','','','','','system1','oortle.com','en_US','US/Pacific','x86_64','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'admin','Ubuntu','7_10','Server','00-1a-92-6c-77-91','dynamic','','','','','','system2','oortle.com','en_US','US/Pacific','x86_64','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Ubuntu_7_10_Server` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `VMware_3_ESX`
+--
+
+DROP TABLE IF EXISTS `VMware_3_ESX`;
+CREATE TABLE `VMware_3_ESX` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(10) default NULL,
+  `os_subversion` varchar(45) default NULL,
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `password` varchar(50) default NULL,
+  `password_confirm` varchar(50) default NULL,
+  `redeploy` varchar(5) default NULL,
+  `action` varchar(50) default NULL,
+  `notify` varchar(5) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `VMware_3_ESX`
+--
+
+LOCK TABLES `VMware_3_ESX` WRITE;
+/*!40000 ALTER TABLE `VMware_3_ESX` DISABLE KEYS */;
+INSERT INTO `VMware_3_ESX` VALUES (1,'admin','VMware','3','ESX','00-1a-92-62-4d-28','dynamic','','','','','','vmware','fastdeploy.com','en_US','US/Pacific','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'admin','VMware','3','ESX','00-1a-92-6c-77-91','dynamic','','','','','','smf-esx-01','serverminds.com','en_US','US/Pacific','i386','sata',NULL,NULL,'','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `VMware_3_ESX` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Windows_2003_Enterprise`
+--
+
+DROP TABLE IF EXISTS `Windows_2003_Enterprise`;
+CREATE TABLE `Windows_2003_Enterprise` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(50) default NULL,
+  `os_subversion` varchar(50) NOT NULL default '',
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `image` varchar(100) NOT NULL default '',
+  `targetpath` varchar(50) NOT NULL default '',
+  `productid` varchar(29) NOT NULL default '',
+  `fullname` varchar(100) default NULL,
+  `orgname` varchar(100) default NULL,
+  `licensemode` varchar(10) NOT NULL default '',
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  `other_settings` text,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Windows_2003_Enterprise`
+--
+
+LOCK TABLES `Windows_2003_Enterprise` WRITE;
+/*!40000 ALTER TABLE `Windows_2003_Enterprise` DISABLE KEYS */;
+INSERT INTO `Windows_2003_Enterprise` VALUES (12,'','Windows','2003','Enterprise','00-1a-92-6c-77-eb','dynamic','','','','','','a120-72s0ag002237','serverminds.com','1','004','i386','sata',NULL,NULL,'','',NULL,'11','\\Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Serverminds.com','PerServer',NULL,NULL,'');
+/*!40000 ALTER TABLE `Windows_2003_Enterprise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Windows_2003_R2_Standard`
+--
+
+DROP TABLE IF EXISTS `Windows_2003_R2_Standard`;
+CREATE TABLE `Windows_2003_R2_Standard` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(50) default NULL,
+  `os_subversion` varchar(50) NOT NULL default '',
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `image` varchar(100) NOT NULL default '',
+  `targetpath` varchar(50) NOT NULL default '',
+  `productid` varchar(29) NOT NULL default '',
+  `fullname` varchar(100) default NULL,
+  `orgname` varchar(100) default NULL,
+  `licensemode` varchar(10) NOT NULL default '',
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  `other_settings` text,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Windows_2003_R2_Standard`
+--
+
+LOCK TABLES `Windows_2003_R2_Standard` WRITE;
+/*!40000 ALTER TABLE `Windows_2003_R2_Standard` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Windows_2003_R2_Standard` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Windows_2003_Standard`
+--
+
+DROP TABLE IF EXISTS `Windows_2003_Standard`;
+CREATE TABLE `Windows_2003_Standard` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(50) default NULL,
+  `os_subversion` varchar(50) NOT NULL default '',
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `image` varchar(100) NOT NULL default '',
+  `targetpath` varchar(50) NOT NULL default '',
+  `productid` varchar(29) NOT NULL default '',
+  `fullname` varchar(100) default NULL,
+  `orgname` varchar(100) default NULL,
+  `licensemode` varchar(10) NOT NULL default '',
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  `other_settings` text,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Windows_2003_Standard`
+--
+
+LOCK TABLES `Windows_2003_Standard` WRITE;
+/*!40000 ALTER TABLE `Windows_2003_Standard` DISABLE KEYS */;
+INSERT INTO `Windows_2003_Standard` VALUES (5,'','Windows','2003','Standard','00-04-23-B2-51-EE','static','10.50.1.51','255.255.255.0','10.50.1.1','10.253.0.32','10.253.0.33','deckard','serverminds.com','1','004','i386','sata',NULL,NULL,'','',NULL,'9','Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Organization','PerSeat',NULL,NULL,''),(6,'','Windows','2003','Standard','00-12-79-a6-4f-36','static','10.50.1.51','255.255.255.0','10.50.1.1','10.253.0.32','','blade1','fastdeploy.com','1','004','i386','sata',NULL,'6','','',NULL,'9','Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Organization','PerSeat',NULL,NULL,'[WindowsFirewall]\nProfiles = WindowsFirewall.TurnOffFirewall\n\n[WindowsFirewall.TurnOffFirewall]\nMode = 0'),(7,'','Windows','2003','Standard','00-0c-29-12-6e-cc','dynamic','','','','','','apple','fastdeploy.com','1','004','i386','sata',NULL,'6','','',NULL,'9','Windows','DFCQV-396R8-64C2V-3QDWJ-6QGB6','IT','Organization','PerSeat',NULL,NULL,''),(8,'','Windows','2003','Standard','00-1a-92-6c-77-eb','dynamic','','','','','','a120-72s0ag002237','serverminds.com','1','004','i386','sata',NULL,'6','','',NULL,'7','\\Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Serverminds.com','PerSeat',NULL,NULL,''),(9,'','Windows','2003','Standard','00-1a-92-62-4c-98','dynamic','','','','','','a100-73s0ag000771','serverminds.com','1','004','i386','sata',NULL,'6','','',NULL,'6','\\Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Serverminds.com','PerServer',NULL,NULL,''),(10,'','Windows','2003','Standard','24-23-r2-r2-r2-3r','dynamic','','','','','','tewte','setseest-de','2','110','i386','scsi',NULL,NULL,'','',NULL,'6','win','3awr2v23f2f32f3awfawfw','sdsfdsdfsdf','','PerServer',NULL,NULL,''),(11,'','Windows','2003','Standard','00-1a-92-6c-77-91','dynamic','','','','','','a120-72s0ag002236','serverminds.com','1','004','i386','sata',NULL,'6','','',NULL,'6','\\Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Serverminds.com','PerSeat',NULL,NULL,''),(12,'','Windows','2003','Standard','00-00-4f-4j-33-00','dynamic','','','','','','test','test','1','004','i386','scsi',NULL,NULL,'','',NULL,'6','\\windows','ewrwerwerwerwererwer','','','PerServer',NULL,NULL,''),(13,'','Windows','2003','Standard','00-1a-92-62-4d-0a','static','65.74.161.98','255.255.255.240','65.74.161.97','65.74.153.197','65.74.153.198','a100-73s0ag000790','fastdeploy.com','1','004','i386','sata',NULL,NULL,'','',NULL,'6','\\Windows','HJYMX-92D8P-MHX89-QHTWD-8DWYB','IT','Serverminds.com','PerServer',NULL,NULL,'');
+/*!40000 ALTER TABLE `Windows_2003_Standard` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Windows_XP_Professional`
+--
+
+DROP TABLE IF EXISTS `Windows_XP_Professional`;
+CREATE TABLE `Windows_XP_Professional` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(50) default NULL,
+  `os_subversion` varchar(50) NOT NULL default '',
+  `mac` varchar(25) NOT NULL default '',
+  `addr_type` varchar(35) default NULL,
+  `ipaddr` varchar(25) default NULL,
+  `netmask` varchar(25) default NULL,
+  `gateway` varchar(25) default NULL,
+  `dns_1` varchar(25) default NULL,
+  `dns_2` varchar(25) default NULL,
+  `hostname` varchar(100) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `lang` varchar(100) NOT NULL default '',
+  `tz` varchar(75) NOT NULL default '',
+  `cpu` varchar(15) NOT NULL default '',
+  `hd` varchar(50) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  `software` text,
+  `post_install` text,
+  `pre_install` text,
+  `drivers` text,
+  `image` varchar(100) NOT NULL default '',
+  `targetpath` varchar(50) NOT NULL default '',
+  `productid` varchar(29) NOT NULL default '',
+  `fullname` varchar(100) default NULL,
+  `orgname` varchar(100) default NULL,
+  `profile_create_name` varchar(100) default NULL,
+  `profile_id` int(11) default NULL,
+  `other_settings` text,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Windows_XP_Professional`
+--
+
+LOCK TABLES `Windows_XP_Professional` WRITE;
+/*!40000 ALTER TABLE `Windows_XP_Professional` DISABLE KEYS */;
+INSERT INTO `Windows_XP_Professional` VALUES (7,'admin','Windows','XP','Professional','00-12-79-a6-4f-36','dynamic','','','','','','brooks','amat.com','1','004','i386','sata',NULL,NULL,'','',NULL,'10','Windows','VMBX6-9F3WF-M3X76-7DKVP-2FHWT','GIS','Applied Materials',NULL,NULL,NULL),(8,'admin','Windows','XP','Professional','00-04-23-b2-51-ee','dynamic','','','','','','brooks','amat.com','1','004','i386','ide',NULL,NULL,'','',NULL,'4','Windows','VMBX6-9F3WF-M3X76-7DKVP-2FHWT','GIS','Applied Materials',NULL,NULL,NULL),(10,'admin','Windows','XP','Professional','ds-fs-dd-fd-sf-df','dynamic','','','','','','host1','domain1','1','000','i386','sata',NULL,NULL,'','',NULL,'4','WXP','sfisf-idsij-sffis-fffff-ffdsf','','',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `Windows_XP_Professional` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `groups`
+--
+
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE `groups` (
+  `gid` int(11) NOT NULL auto_increment,
+  `fd_group` varchar(50) NOT NULL default '',
+  `desc` varchar(75) default NULL,
+  `priority` int(11) default NULL,
+  PRIMARY KEY  (`gid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `groups`
+--
+
+LOCK TABLES `groups` WRITE;
+/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` VALUES (1,'admin','FastDeploy Admin Supergroup1',100);
+/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `help`
+--
+
+DROP TABLE IF EXISTS `help`;
+CREATE TABLE `help` (
+  `hid` int(11) NOT NULL auto_increment,
+  `p` varchar(25) NOT NULL default '',
+  `text` text NOT NULL,
+  PRIMARY KEY  (`hid`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `help`
+--
+
+LOCK TABLES `help` WRITE;
+/*!40000 ALTER TABLE `help` DISABLE KEYS */;
+INSERT INTO `help` VALUES (1,'mac','<B>MAC Address</B>:  Short for Media Access Control, the MAC address is the \"burned in\" (or hard-coded) hexadecimail address of a network interface card (NIC).  A MAC address is used by Serverminds because it is universally unique and therefore can be coded for each server deployed automatically.  The format of a MAC address is a 48-bit hexadecimal address, usually like 00-12-3F-C6-B1-DF.'),(2,'domain','<B>Domain Name: </b> Your domain name is the domain identifier you use for your network. For example, Microsoft\'s domain name is microsoft.com. This identifier is not required by FastDeploy, but is used for your convenience to designate the domain your automatically deployed server will be in.'),(5,'rootpass','<B>Root Password: </b> The password for your root superuser account.  The root account has unlimited administrator privileges on any UNIX-like operating system so you should choose this password carefully.  This password is <b>not</b> stored or preserved on the Serverminds FastDeploy system after the deployment is completed.'),(4,'hostname','<B>Host name: </b> The hostname of your computer is what uniquely identifies your server in your network environment. The hostname and domain name together constitute a server\'s fully-qualified domain name (e.g., www.linux.com)');
+/*!40000 ALTER TABLE `help` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `profiles`
+--
+
+DROP TABLE IF EXISTS `profiles`;
+CREATE TABLE `profiles` (
+  `profile_id` int(11) NOT NULL auto_increment COMMENT 'Primary Profile ID Key',
+  `profile_create_name` varchar(100) NOT NULL default '',
+  `os_name` varchar(55) NOT NULL default '',
+  `os_version` varchar(55) NOT NULL default '',
+  `os_subversion` varchar(65) default NULL,
+  PRIMARY KEY  (`profile_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='System Profiles';
+
+--
+-- Dumping data for table `profiles`
+--
+
+LOCK TABLES `profiles` WRITE;
+/*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `servers`
+--
+
+DROP TABLE IF EXISTS `servers`;
+CREATE TABLE `servers` (
+  `serverid` bigint(20) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(45) NOT NULL default '',
+  `os_subversion` varchar(45) default NULL,
+  `hostname` varchar(65) NOT NULL default '',
+  `mac` varchar(25) NOT NULL default '',
+  `sessid` varchar(150) default NULL,
+  PRIMARY KEY  (`serverid`)
+) ENGINE=MyISAM AUTO_INCREMENT=196 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `servers`
+--
+
+LOCK TABLES `servers` WRITE;
+/*!40000 ALTER TABLE `servers` DISABLE KEYS */;
+INSERT INTO `servers` VALUES (172,'admin','CentOS','4_4','','blade1','00-0c-29-e5-62-6a','n79n58acso304momgndt1edm94'),(173,'admin','Windows','XP','Professional','brooks','00-04-23-b2-51-ee','eidtoj5lgthot0pksknqefhkc7'),(184,'admin','CentOS','5','','a100-73s0ag000790','00-1a-92-62-4d-0a','3f4bc7140f0fc27a54acd0a4464c5710'),(166,'admin','Windows','XP','Professional','brooks','00-12-79-a6-4f-36','eidtoj5lgthot0pksknqefhkc7'),(165,'admin','Debian','3_1','','apple','00-0f-20-d0-53-2f','d8acc279c8f4a5452ef3938babe96f1f'),(175,'admin','Windows','2003','Standard','apple','00-0c-29-12-6e-cc','7oq3ha940tjgi6ger0p9n6d3u5'),(176,'admin','RedHat','5','Enterprise','amd1','00-0d-60-53-20-e5','ol6q8o96c064hde6oi7q70phb0'),(177,'admin','Ubuntu','7_10','Server','system1','00-1a-92-6c-77-eb','8304d11ab7aceeb6d583afce202eaf7c'),(178,'admin','Windows','2003','Standard','a100-73s0ag000771','00-1a-92-62-4c-98','f74446d322c285bd93799e3d2726fad9'),(179,'admin','Windows','2003','Standard','tewte','24-23-r2-r2-r2-3r','df4860827e2abead4895c10ada1bdc5d'),(180,'admin','Ubuntu','7_10','Server','system2','00-1a-92-6c-77-91','547f60fbd692ada25961f16a34e2cfe6'),(181,'admin','Windows','2003','Standard','test','00-00-4f-4j-33-00','4be0b53596aab8e076cb098932e54a7a'),(182,'admin','Fedora','6','','test','34-34-34-34-34-34','44dae4401a2fec5d667f7cd02d439133'),(183,'admin','CentOS','5','','abcd','af-0d-32-12-45-aa','191741d4d4fad46a4310d18a3c68ce21'),(185,'admin','Debian','4','','vmware1','00-1a-92-62-4d-28','8111800b6a2bdb5d6be1b5b36d284e9a'),(186,'admin','CentOS','5','','a100-73s0ag000790','00-1a-92-62-4c-e0','3f4bc7140f0fc27a54acd0a4464c5710'),(191,'admin','CentOS','5','','utah','00:17:A4:DE:51:F3','1ce929a1a3dca9677b428e38bbdcb5d5'),(187,'admin','CentOS','5','','vmmanage','00-0c-29-16-60-af','a545e276788f0323abeedbaa23274ad8'),(188,'admin','Oracle','5','Enterprise','vmmanage','00-0c-29-82-e5-a2','a545e276788f0323abeedbaa23274ad8'),(190,'admin','CentOS','5','','d','ad-fa-df-da-fd-af','40ad8582fe38599fe9a09ebe04363ec1'),(193,'admin','Windows','XP','Professional','host1','ds-fs-dd-fd-sf-df','127ae6f1cff9052a60df2997259527e0'),(194,'admin','CentOS','5','','dizzle','01-01-01-01-01-01','731a9cf7885d6ed584fab8fddb9cf920'),(195,'admin','CentOS','5','','centos5-lamp','profile','d21a7a697e83746075b29278bfc5f935');
+/*!40000 ALTER TABLE `servers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `software`
+--
+
+DROP TABLE IF EXISTS `software`;
+CREATE TABLE `software` (
+  `pid` bigint(20) NOT NULL auto_increment,
+  `title` varchar(75) NOT NULL default '',
+  `desc` varchar(100) default NULL,
+  `script_text` text NOT NULL,
+  `post_install` text,
+  `pre_install` text,
+  `os_name` varchar(65) NOT NULL default '',
+  `os_version` varchar(65) NOT NULL default '',
+  `os_subversion` varchar(65) default NULL,
+  PRIMARY KEY  (`pid`),
+  KEY `title` (`title`)
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `software`
+--
+
+LOCK TABLES `software` WRITE;
+/*!40000 ALTER TABLE `software` DISABLE KEYS */;
+INSERT INTO `software` VALUES (1,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'CentOS','4_4',NULL),(2,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'CentOS','4_4',NULL),(3,'Mail Server',NULL,'@mail-server',NULL,NULL,'CentOS','4_4',NULL),(4,'Samba Server',NULL,'@smb-server',NULL,NULL,'CentOS','4_4',NULL),(5,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'CentOS','4_4',NULL),(6,'IIS Server','IIS6 Server Setup','iis_common = ON\r\niis_www = ON\r\niis_www_vdir_scripts = ON\r\niis_inetmgr = ON\r\nfp_extensions = OFF\r\niis_ftp = OFF',NULL,NULL,'Windows','2003','Standard'),(7,'Tomcat App Server','Tomcat App Server','Testing #2',NULL,NULL,'Windows','2003',NULL),(8,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'RedHat','4',NULL),(10,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'RedHat','4',NULL),(11,'Mail Server',NULL,'@mail-server',NULL,NULL,'RedHat','4',NULL),(12,'Samba Server',NULL,'@smb-server',NULL,NULL,'RedHat','4',NULL),(13,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'RedHat','4',NULL),(14,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'Fedora','6',NULL),(15,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'Fedora','6',NULL),(16,'Mail Server',NULL,'@mail-server',NULL,NULL,'Fedora','6',NULL),(17,'Samba Server',NULL,'@smb-server',NULL,NULL,'Fedora','6',NULL),(18,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'Fedora','6',NULL),(19,'KDE Desktop',NULL,'@kde-desktop',NULL,NULL,'Fedora','6',NULL),(20,'Gnome Desktop',NULL,'@gnome-desktop',NULL,NULL,'Fedora','6',NULL),(21,'Graphics Apps',NULL,'@graphics',NULL,NULL,'Fedora','6',NULL),(22,'Office Apps',NULL,'@office',NULL,NULL,'Fedora','6',NULL),(23,'Internet Apps',NULL,'@graphical-internet',NULL,NULL,'Fedora','6',NULL),(24,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'Fedora','5',NULL),(25,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'Fedora','5',NULL),(26,'Mail Server',NULL,'@mail-server',NULL,NULL,'Fedora','5',NULL),(27,'Samba Server',NULL,'@smb-server',NULL,NULL,'Fedora','5',NULL),(28,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'Fedora','5',NULL),(29,'KDE Desktop',NULL,'@kde-desktop',NULL,NULL,'Fedora','5',NULL),(30,'Gnome Desktop',NULL,'@gnome-desktop',NULL,NULL,'Fedora','5',NULL),(31,'Graphics Apps',NULL,'@graphics',NULL,NULL,'Fedora','5',NULL),(32,'Office Apps',NULL,'@office',NULL,NULL,'Fedora','5',NULL),(33,'Internet Apps',NULL,'@graphical-internet',NULL,NULL,'Fedora','5',NULL),(34,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'Fedora','4',NULL),(35,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'Fedora','4',NULL),(36,'Mail Server',NULL,'@mail-server',NULL,NULL,'Fedora','4',NULL),(37,'Samba Server',NULL,'@smb-server',NULL,NULL,'Fedora','4',NULL),(38,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'Fedora','4',NULL),(39,'KDE Desktop',NULL,'@kde-desktop',NULL,NULL,'Fedora','4',NULL),(40,'Gnome Desktop',NULL,'@gnome-desktop',NULL,NULL,'Fedora','4',NULL),(41,'Graphics Apps',NULL,'@graphics',NULL,NULL,'Fedora','4',NULL),(42,'Office Apps',NULL,'@office',NULL,NULL,'Fedora','4',NULL),(43,'Internet Apps',NULL,'@graphical-internet',NULL,NULL,'Fedora','4',NULL),(44,'Web server','Web server','Web server',NULL,NULL,'Debian','3_1',NULL),(45,'DNS server','DNS server','DNS server',NULL,NULL,'Debian','3_1',NULL),(46,'Mail server','Mail server','Mail server',NULL,NULL,'Debian','3_1',NULL),(47,'SQL database','SQL database','SQL database',NULL,NULL,'Debian','3_1',NULL),(48,'Ubuntu Standard','Ubuntu Standard','ubuntu-standard',NULL,NULL,'Ubuntu','6_10','Server'),(49,'Ubuntu LAMP','Ubuntu LAMP','lamp-server',NULL,NULL,'Ubuntu','6_10','Server'),(50,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'CentOS','5',NULL),(51,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'CentOS','5',NULL),(52,'Mail Server',NULL,'@mail-server',NULL,NULL,'CentOS','5',NULL),(53,'Samba Server',NULL,'@smb-server',NULL,NULL,'CentOS','5',NULL),(54,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'CentOS','5',NULL),(55,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'RedHat','5',NULL),(56,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'RedHat','5',NULL),(57,'Mail Server',NULL,'@mail-server',NULL,NULL,'RedHat','5',NULL),(58,'Samba Server',NULL,'@smb-server',NULL,NULL,'RedHat','5',NULL),(59,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'RedHat','5',NULL),(60,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'CentOS','4_5',NULL),(61,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'CentOS','4_5',NULL),(62,'Mail Server',NULL,'@mail-server',NULL,NULL,'CentOS','4_5',NULL),(63,'Samba Server',NULL,'@smb-server',NULL,NULL,'CentOS','4_5',NULL),(64,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'CentOS','4_5',NULL),(65,'DNS server','DNS server','DNS server',NULL,NULL,'Debian','4',NULL),(66,'Mail server','Mail server','Mail server',NULL,NULL,'Debian','4',NULL),(67,'SQL database','SQL database','SQL database',NULL,NULL,'Debian','4',NULL),(68,'Web Server',NULL,'@web-server','/sbin/chkconfig --level 345 httpd on',NULL,'Oracle','5','Enterprise'),(69,'DNS Server',NULL,'@dns-server','/sbin/chkconfig --level 345 named on',NULL,'Oracle','5','Enterprise'),(70,'Mail Server',NULL,'@mail-server',NULL,NULL,'Oracle','5','Enterprise'),(71,'Samba Server',NULL,'@smb-server',NULL,NULL,'Oracle','5','Enterprise'),(72,'MySQL Server',NULL,'@mysql\r\nmysql-server','/sbin/chkconfig --level 345 mysqld on',NULL,'Oracle','5','Enterprise');
+/*!40000 ALTER TABLE `software` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `status`
+--
+
+DROP TABLE IF EXISTS `status`;
+CREATE TABLE `status` (
+  `status_id` bigint(20) NOT NULL auto_increment,
+  `hostname` varchar(100) NOT NULL default '',
+  `mac` varchar(17) NOT NULL default '',
+  `os` varchar(100) NOT NULL default '',
+  `username` varchar(150) NOT NULL default '',
+  `ip` varchar(15) NOT NULL default '',
+  `domain` varchar(100) NOT NULL default '',
+  `start_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  `end_time` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`status_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Deployment Status Table';
+
+--
+-- Dumping data for table `status`
+--
+
+LOCK TABLES `status` WRITE;
+/*!40000 ALTER TABLE `status` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tasks`
+--
+
+DROP TABLE IF EXISTS `tasks`;
+CREATE TABLE `tasks` (
+  `tid` int(25) NOT NULL auto_increment,
+  `task_name` varchar(35) NOT NULL default '',
+  `os_name` varchar(45) NOT NULL default '',
+  `os_version` varchar(15) default NULL,
+  `os_subversion` varchar(65) default NULL,
+  `script` text,
+  PRIMARY KEY  (`tid`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tasks`
+--
+
+LOCK TABLES `tasks` WRITE;
+/*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
+INSERT INTO `tasks` VALUES (1,'00-04-23-B2-51-EE','Windows','2003','Standard','#!/bin/sh\nparted /dev/hda mklabel msdos			\nparted /dev/hda mkpart primary fat32 0 100%\nparted /dev/hda set 1 boot on\nmkfs.vfat /dev/hda1\nmount /dev/hda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 10.50.1.91::installs/Windows/XPCD/ /mnt/dos\ncd /mnt/dos\nwget -q http://10.50.1.91/configs//51ee.txt\nmv 51ee.txt unattend.txt\nwget -q http://10.50.1.91/files/dos/syslinux.cfg\nwget -q http://10.50.1.91/files/dos/dos.imz\nwget -q http://10.50.1.91/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -wp /dev/hda1 \nsyslinux /dev/sda1\necho \'Rebooting now...\'\nreboot\n'),(2,'00-0D-60-53-15-9E','Windows','XP','Professional','#!/bin/sh\nparted /dev/sda rm 1\nparted /dev/sda mkpart primary fat32 0 100%\nparted /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 10.50.1.91::installs/Windows/XPCD/ /mnt/dos\ncd /mnt/dos\nwget -q http://10.50.1.91/configs//159e.txt\nmv 159e.txt unattend.txt\nwget -q http://10.50.1.91/files/dos/syslinux.cfg\nwget -q http://10.50.1.91/files/dos/dos.imz\nwget -q http://10.50.1.91/files/dos/memdisk\ncd /\numount /mnt/dos\nsyslinux /dev/sda1\n'),(3,'00-0F-20-D0-53-2F','Windows','XP','Professional','#!/bin/sh\nparted /dev/sda rm 1\nparted /dev/sda mkpart primary fat32 0 100%\nparted /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 10.50.1.91::installs/Windows/XP/i386/ /mnt/dos\ncd /mnt/dos\nwget -q http://10.50.1.91/configs//532f.txt\nmv 532f.txt unattend.txt\nwget -q http://10.50.1.91/files/dos/syslinux.cfg\nwget -q http://10.50.1.91/files/dos/dos.imz\nwget -q http://10.50.1.91/files/dos/memdisk\ncd /\numount /mnt/dos\nsyslinux /dev/sda1\n'),(4,'00-12-79-A6-4F-36','Windows','XP','Professional','#!/bin/sh\nparted /dev/sda mklabel msdos			\nparted /dev/sda mkpart primary fat32 0 100%\nparted /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 10.50.1.91::installs/Windows/WINXP/ /mnt/dos\ncd /mnt/dos\nwget -q http://10.50.1.91/configs//4f36.txt\nmv 4f36.txt unattend.txt\nwget -q http://10.50.1.91/files/dos/syslinux.cfg\nwget -q http://10.50.1.91/files/dos/dos.imz\nwget -q http://10.50.1.91/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\necho \'Rebooting now...\'\nreboot\n'),(5,'00-0C-29-12-6E-CC','Windows','2003','Standard','#!/bin/sh\nparted -s /dev/sda mklabel msdos		\nparted -s /dev/sda rm 1	\nparted -s /dev/sda mkpart primary fat32 0 100%\nparted -s /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 10.50.1.91::installs/Windows/R2/ /mnt/dos\ncd /mnt/dos\nwget -q http://10.50.1.91/configs//6ecc.txt\nmv 6ecc.txt unattend.txt\nwget -q http://10.50.1.91/files/dos/syslinux.cfg\nwget -q http://10.50.1.91/files/dos/dos.imz\nwget -q http://10.50.1.91/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -w /dev/sda \nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\nreboot\n'),(6,'00-1A-92-6C-77-EB','Windows','2003','Standard','#!/bin/sh\r\nparted -s /dev/sda mklabel msdos		\r\nparted -s /dev/sda rm 1	\r\nparted -s /dev/sda mkpart primary fat32 0 100%\r\nparted -s /dev/sda set 1 boot on\r\nmkfs.vfat /dev/sda1\r\nmount /dev/sda1 /mnt/dos\r\ncd /mnt/dos\r\necho \'Copying Windows installation image files...\' \r\nrsync -r 65.74.153.197::installs/Windows/2003/Standard/ /mnt/dos\r\ncd /mnt/dos\r\nwget -q http://beta.fastdeploy.com/configs//77eb.txt\r\nmv 77eb.txt unattend.txt\r\nwget -q http://beta.fastdeploy.com/files/dos/syslinux.cfg\r\nwget -q http://beta.fastdeploy.com/files/dos/dos.imz\r\nwget -q http://beta.fastdeploy.com/files/dos/memdisk\r\ncd /\r\numount /mnt/dos\r\nms-sys -w /dev/sda \r\nms-sys -wp /dev/sda1 \r\nsyslinux /dev/sda1\r\n'),(7,'00-1A-92-62-4C-98','Windows','2003','Standard','#!/bin/sh\nparted -s /dev/sda mklabel msdos		\nparted -s /dev/sda rm 1	\nparted -s /dev/sda mkpart primary fat32 0 100%\nparted -s /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/2003/Standard/ /mnt/dos\ncd /mnt/dos\nwget -q http://beta.fastdeploy.com/configs//4c98.txt\nmv 4c98.txt unattend.txt\nwget -q http://beta.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://beta.fastdeploy.com/files/dos/dos.imz\nwget -q http://beta.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -w /dev/sda \nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\nreboot\n'),(8,'24-23-R2-R2-R2-3R','Windows','2003','Standard','#!/bin/sh\nparted -s /dev/sda mklabel msdos		\nparted -s /dev/sda rm 1	\nparted -s /dev/sda mkpart primary fat32 0 100%\nparted -s /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/2003/Standard/ /mnt/dos\ncd /mnt/dos\nwget -q http://beta.fastdeploy.com/configs//r23r.txt\nmv r23r.txt unattend.txt\nwget -q http://beta.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://beta.fastdeploy.com/files/dos/dos.imz\nwget -q http://beta.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -w /dev/sda \nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\nreboot\n'),(9,'00-1A-92-6C-77-91','Windows','2003','Standard','#!/bin/sh\nparted -s /dev/sda mklabel msdos		\nparted -s /dev/sda rm 1	\nparted -s /dev/sda mkpart primary fat32 0 100%\nparted -s /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/2003/Standard/ /mnt/dos\ncd /mnt/dos\nwget -q http://beta.fastdeploy.com/configs//7791.txt\nmv 7791.txt unattend.txt\nwget -q http://beta.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://beta.fastdeploy.com/files/dos/dos.imz\nwget -q http://beta.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -w /dev/sda \nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\nreboot\n'),(10,'00-00-4F-4J-33-00','Windows','2003','Standard','#!/bin/sh\nparted -s /dev/sda mklabel msdos		\nparted -s /dev/sda rm 1	\nparted -s /dev/sda mkpart primary fat32 0 100%\nparted -s /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/2003/Standard/ /mnt/dos\ncd /mnt/dos\nwget -q http://beta.fastdeploy.com/configs//3300.txt\nmv 3300.txt unattend.txt\nwget -q http://beta.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://beta.fastdeploy.com/files/dos/dos.imz\nwget -q http://beta.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -w /dev/sda \nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\nreboot\n'),(11,'00-1A-92-62-4D-0A','Windows','2003','Standard','#!/bin/sh\nparted -s /dev/sda mklabel msdos		\nparted -s /dev/sda rm 1	\nparted -s /dev/sda mkpart primary fat32 0 100%\nparted -s /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/2003/Standard/ /mnt/dos\ncd /mnt/dos\nwget -q http://beta.fastdeploy.com/configs//4d0a.txt\nmv 4d0a.txt unattend.txt\nwget -q http://beta.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://beta.fastdeploy.com/files/dos/dos.imz\nwget -q http://beta.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -w /dev/sda \nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\nreboot\n'),(12,'00-52-25-36-4E-1F','Windows','XP','Professional','#!/bin/sh\nparted /dev/sda mklabel msdos			\nparted /dev/sda mkpart primary fat32 0 100%\nparted /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/XPCD/ /mnt/dos\ncd /mnt/dos\nwget -q http://b.fastdeploy.com/configs//4e1f.txt\nmv 4e1f.txt unattend.txt\nwget -q http://b.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://b.fastdeploy.com/files/dos/dos.imz\nwget -q http://b.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\necho \'Rebooting now...\'\nreboot\n'),(13,'DS-FS-DD-FD-SF-DF','Windows','XP','Professional','#!/bin/sh\nparted /dev/sda mklabel msdos			\nparted /dev/sda mkpart primary fat32 0 100%\nparted /dev/sda set 1 boot on\nmkfs.vfat /dev/sda1\nmount /dev/sda1 /mnt/dos\ncd /mnt/dos\necho \'Copying Windows installation image files...\' \nrsync -r 65.74.153.197::installs/Windows/XPCD/ /mnt/dos\ncd /mnt/dos\nwget -q http://b.fastdeploy.com/configs//sfdf.txt\nmv sfdf.txt unattend.txt\nwget -q http://b.fastdeploy.com/files/dos/syslinux.cfg\nwget -q http://b.fastdeploy.com/files/dos/dos.imz\nwget -q http://b.fastdeploy.com/files/dos/memdisk\ncd /\numount /mnt/dos\nms-sys -wp /dev/sda1 \nsyslinux /dev/sda1\necho \'Rebooting now...\'\nreboot\n');
+/*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `uid` int(11) NOT NULL auto_increment,
+  `customer_id` varchar(50) NOT NULL default '',
+  `password` varchar(100) NOT NULL default '',
+  `email` varchar(125) default NULL,
+  `first_name` varchar(35) default NULL,
+  `last_name` varchar(85) default NULL,
+  `fd_group` varchar(50) default NULL,
+  PRIMARY KEY  (`uid`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COMMENT='FastDeploy Serverminds User Table';
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'admin','bcfd0c3103712b1f97b505e611806e44','jantoniou@serverminds.com','Fastdeploy','Admin','admin');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `windows_images`
+--
+
+DROP TABLE IF EXISTS `windows_images`;
+CREATE TABLE `windows_images` (
+  `imageid` int(11) NOT NULL auto_increment,
+  `image_name` varchar(50) NOT NULL default '',
+  `image_path` text NOT NULL,
+  `os_name` varchar(55) NOT NULL default '',
+  `os_version` varchar(45) NOT NULL default '',
+  `os_subversion` varchar(65) default NULL,
+  `arch` varchar(10) NOT NULL default '',
+  PRIMARY KEY  (`imageid`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `windows_images`
+--
+
+LOCK TABLES `windows_images` WRITE;
+/*!40000 ALTER TABLE `windows_images` DISABLE KEYS */;
+INSERT INTO `windows_images` VALUES (4,'XP SP2 Standard','/home/mirrors/Windows/XPCD','','XP','Professional','i386'),(6,'Windows 2003 Standard - DriverPack image','/home/mirrors/Windows/2003/Standard','','2003','Standard','i386'),(7,'Windows 2003 Standard - SP2 Standard','/home/mirrors/Windows/2003/Standard','','2003','Standard','i386'),(8,'XPSP1 Pro - 64bit','/home/mirrors/Windows/WINXP64','','XP','Professional','amd64'),(9,'Windows 2003 R2 Standard','/home/mirrors/Windows/R2','','2003','Standard','i386'),(10,'XP SP1 i386','/home/mirrors/Windows/WINXP','','XP','Professional','i386'),(11,'Windows 2003 Enterprise - SP2 ASUS RS120 Image','/home/mirrors/Windows/2003/Enterprise','','2003','Enterprise','i386');
+/*!40000 ALTER TABLE `windows_images` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2008-01-02 19:06:01

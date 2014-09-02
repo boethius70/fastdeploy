@@ -1,0 +1,20 @@
+ {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  
+  {{/if}}
+ 
+  
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+	<div dojoType="ContentPane" layoutAlign="top" id="bluebox" style="height:200px;">
+	<p>
+		<label for="domain"><b>Pick a base operating system to create a profile for: </b></label> {{$select_os}}
+	</P>
+	
+	</div>

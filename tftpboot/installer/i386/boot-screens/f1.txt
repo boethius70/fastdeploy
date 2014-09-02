@@ -1,0 +1,14 @@
+installer/i386/boot-screens/fdpxe.lss
+1fWelcome to the Fastdeploy automated operating system installer
+
+0fWait 5 seconds to auto-boot if you've already setup this machine
+through the Fastdeploy Web interface.
+
+Otherwise, enter "menu" at the 0bboot:0f prompt below.
+
+0f 
+PLEASE NOTE:  ALL FASTDEPLOY AUTOMATED INSTALL PROCESSES >>WILL
+DELETE YOUR HARD DRIVE<< YOU WILL LOSE ALL YOUR DATA IF YOU CONTINUE!!!
+PLEASE NOTE:  WE ARE NOT RESPONSIBLE FOR DATA LOSS!!!  REBOOT YOUR 
+COMPUTER >>>NOW<<< IF YOU DO NOT WANT TO LOSE DATA!!!.
+0f

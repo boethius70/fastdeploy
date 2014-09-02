@@ -1,0 +1,60 @@
+ {{if $form_data.javascript}}
+  <script language="javascript">
+  <!-- 
+      {{$form_data.javascript}}
+  //-->
+  </script>
+  {{/if}}
+  <form {{$form_data.attributes}}>
+    <!-- important hidden fields -->
+   {{$form_data.hidden}}
+    <!-- Display the fields -->
+	<div dojoType="ContentPane" layoutAlign="top" id="bluebox">
+	
+		This server has been configured for automatic installation with these settings:
+	<BR></BR>	
+	<p>
+		<label for="domain"><b>Hostname: </b></label> {{$hostname}}
+	</P>
+	<P>
+		<label for="domain"><b>Domain: </b></label> {{$domain}}
+	</P>
+	<P>
+		<label for="domain"><b>MAC address: </b></label> {{$mac}}
+	</P>
+	<P>
+		<label for="domain"><b>Network Addressing: </b></label> {{$addr_type}}
+	</P>
+	<P>
+		<label for="domain"><b>Admin password: </b></label> {{$password}}
+	</P>
+	<P>
+		<label for="domain"><b>Language: </b></label> {{$lang}}
+	</P>
+	<P>
+		<label for="domain"><b>Timezone: </b></label> {{$tz}}
+	</P>
+	<P>
+		<label for="domain"><b>CPU architecture: </b></label> {{$cpu}}
+	</P>
+	<P>
+		<label for="domain"><b>Hard drive interface: </b></label> {{$hd}}
+	</P>
+	<P>
+		<label for="domain"><b>Email notify after install: </b></label> {{$notify}}
+	</P>
+	<P>
+		<label for="domain"><b>Installed packages: </b></label> {{$software}}
+	</P>
+	<BR><BR>
+	<center>
+	<table cellspacing=2 cellpadding=2 border=0 class="yesbox"><tr><td>
+		{{$edit_again}}
+	</td></tr></table>
+	</center>
+	<BR>
+	What's your next step?  Boot the system with this MAC address from the network using the 
+	PXE option.  This is often chosen during the system's BIOS POST with any number of keys 
+	including the F8, F9, and F12 keys.  In some cases you must enable the PXE option in the 
+	system's BIOS before you can perform a network boot.  
+	</div>
